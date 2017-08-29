@@ -7,10 +7,14 @@
 @file: report_cases.py
 @time: 2017/8/28 下午2:01
 """
+import sys
+reload(sys)
+sys.setdefaultencoding('utf8')
 from report_main import Report_Api
 from nose.tools import *
 from datetime import *
 import json
+
 
 
 class Test_Report(object):
