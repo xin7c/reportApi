@@ -9,6 +9,7 @@ import requests
 import urllib
 import time
 import os
+import pprint
 
 
 class TaskName(object):
@@ -44,7 +45,9 @@ class Report_Api(object):
         url = self.url_Maker(reportname=reportname,
                              urlencode_data=data)
         r = requests.post(url=url, headers=self.headers)
-        return r.text
+        result = r.text
+        print result
+        return result
 
 
 if __name__ == "__main__":
