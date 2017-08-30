@@ -8,13 +8,13 @@
 @time: 2017/8/28 下午2:01
 """
 import sys
+
 reload(sys)
 sys.setdefaultencoding('utf8')
 from report_main import Report_Api
 from nose.tools import *
 from datetime import *
 import json
-
 
 
 class Test_Report(object):
@@ -96,7 +96,6 @@ class Test_Report(object):
         print res
         self.checkReportName(reportname, res)
 
-
     def test_007_channelinfo_base_top5_bychannel(self):
         """007:来源分析>>渠道效果对比>>基础数据top5（有实时）"""
         reportname = "channelinfo_base_top5_bychannel"
@@ -114,6 +113,142 @@ class Test_Report(object):
         data = {
             "startdate": "2017-07-01",
             "enddate": "2017-08-28"
+        }
+        res = self.ra.action(reportname, data)
+        print res
+        self.checkReportName(reportname, res)
+
+    def test_009_retention_dau_dau_byds(self):
+        """009:活跃活跃日留存"""
+        reportname = "retention_dau_dau_byds"
+        data = {
+            "startdate": "2017-07-01",
+            "enddate": "2017-08-28",
+            "usergroupsql": ""
+        }
+        res = self.ra.action(reportname, data)
+        print res
+        self.checkReportName(reportname, res)
+
+    def test_010_realtime_dau(self):
+        """010:实时>>实时DAU"""
+        reportname = "realtime_dau"
+        data = {
+            "startdate": "2017-07-01",
+            "enddate": "2017-08-28",
+        }
+        res = self.ra.action(reportname, data)
+        print res
+        self.checkReportName(reportname, res)
+
+    def test_011_realtime_dupclick(self):
+        """011:实时>>实时排重点击"""
+        reportname = "realtime_dupclick"
+        data = {
+            "startdate": "2017-07-01",
+            "enddate": "2017-08-28",
+        }
+        res = self.ra.action(reportname, data)
+        print res
+        self.checkReportName(reportname, res)
+
+    def test_012_retention_install_dau_byweekk(self):
+        """012:新增活跃日留存"""
+        reportname = "retention_install_dau_byweek"
+        data = {
+            "startdate": "2017-07-01",
+            "enddate": "2017-08-28",
+            "usergroupsql": ""
+        }
+        res = self.ra.action(reportname, data)
+        print res
+        self.checkReportName(reportname, res)
+
+    def test_013_realtime_install(self):
+        """013:新增活跃日留存？？？"""
+        reportname = "realtime_install"
+        data = {
+            "startdate": "2017-07-01",
+            "enddate": "2017-08-28",
+        }
+        res = self.ra.action(reportname, data)
+        print res
+        self.checkReportName(reportname, res)
+
+    def test_014_decision_payment_level_byds(self):
+        """014:决策支持>>付费洞察>>新用户已付费情况"""
+        reportname = "decision_payment_level_byds"
+        data = {
+            "startdate": "2017-07-01",
+            "enddate": "2017-08-28",
+        }
+        res = self.ra.action(reportname, data)
+        print res
+        self.checkReportName(reportname, res)
+
+    def test_015_rate_install_byds(self):
+        """015:仪表盘>>激活率趋势（按天）"""
+        reportname = "rate_install_byds"
+        data = {
+            "startdate": "2017-07-01",
+            "enddate": "2017-08-28",
+        }
+        res = self.ra.action(reportname, data)
+        print res
+        self.checkReportName(reportname, res)
+
+    def test_016_rate_install_byhour(self):
+        """016:仪表盘>>激活率趋势（按小时）"""
+        reportname = "rate_install_byhour"
+        data = {
+            "startdate": "2017-07-01",
+            "enddate": "2017-08-28",
+        }
+        res = self.ra.action(reportname, data)
+        print res
+        self.checkReportName(reportname, res)
+
+    def test_017_device_bymodel(self):
+        """017:决策支持>>设备分析>>型号列表"""
+        reportname = "device_bymodel"
+        data = {
+            "startdate": "2017-07-01",
+            "enddate": "2017-08-28",
+        }
+        res = self.ra.action(reportname, data)
+        print res
+        self.checkReportName(reportname, res)
+
+    def test_018_device_byos(self):
+        """017:决策支持>>设备分析>>系统列表"""
+        reportname = "device_byos"
+        data = {
+            "startdate": "2017-07-01",
+            "enddate": "2017-08-28",
+        }
+        res = self.ra.action(reportname, data)
+        print res
+        self.checkReportName(reportname, res)
+
+    def test_019_bd_bykwid(self):
+        """019:来源分析>>推广活动详情>>百度关键词"""
+        reportname = "bd_bykwid"
+        data = {
+            "startdate": "2017-07-01",
+            "enddate": "2017-08-28",
+            "campaignid": "_default_"
+        }
+        res = self.ra.action(reportname, data)
+        print res
+        self.checkReportName(reportname, res)
+
+    def test_020_income_byhour(self):
+        """020:仪表盘>>收入趋势（按小时）"""
+        reportname = "income_byhour"
+        data = {
+            "startdate": "2017-07-01",
+            "enddate": "2017-08-28",
+            "campaignid": "_default_"
         }
         res = self.ra.action(reportname, data)
         print res
