@@ -19,6 +19,7 @@ from datetime import *
 import json
 from tools.localException import ResponseIsNullException
 
+
 class Test_Report(object):
     def __init__(self):
         self.appid = "0c88f597eba1f531d7318eb7c092c69f"

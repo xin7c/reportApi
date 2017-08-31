@@ -15,3 +15,6 @@ nosetests report_cases.py --with-html --html-report=/Users/xuchu/reyun-api/repor
 ========================================
 [命令行]根据attr[指定/跳过]执行case
 nosetests report_cases.py -A "mode!='1'" -v
+
+========================================
+有数据的appid：453c2f5cc4a2cf56763f8211be2cd2e5
