@@ -27,12 +27,13 @@ class TaskName(object):
 
 class Report_Api(object):
 
-    def __init__(self):
+    def __init__(self, appid):
         self.headers = {
             "Content-Type": "application/json"
         }
         self.host = "http://ec2-54-223-136-157.cn-north-1.compute.amazonaws.com.cn:8089/api/trackingio"
-        self.appid = "0c88f597eba1f531d7318eb7c092c69f"
+        self.appid = appid
+        # self.appid = "0c88f597eba1f531d7318eb7c092c69f"
 
     def url_Maker(self, reportname, urlencode_data):
         """input : urlencode_data"""

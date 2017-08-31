@@ -13,12 +13,15 @@ reload(sys)
 sys.setdefaultencoding('utf8')
 from report_main import Report_Api
 from nose.tools import *
+from nose.plugins.skip import SkipTest
+from nose.plugins.attrib import attr
 from datetime import *
 import json
-
+from tools.localException import ResponseIsNullException
 
 class Test_Report(object):
     def __init__(self):
+        self.appid = "0c88f597eba1f531d7318eb7c092c69f"
         self.data = {
             "startdate": "2017-07-01",
             "enddate": "2017-08-28"
@@ -32,15 +35,18 @@ class Test_Report(object):
 
     def setUp(self):
         print "[Start] @ %s" % datetime.today()
-        self.ra = Report_Api()
+        self.ra = Report_Api("0c88f597eba1f531d7318eb7c092c69f")
 
     def tearDown(self):
         print "[End] @ %s" % datetime.today()
 
     def checkReportName(self, req_reportname, res):
         """断言：提交reportname: 返回reportname"""
-        json_res = json.loads(res)["reportname"][0]
-        eq_(req_reportname, json_res, "No %s" % json_res)
+        try:
+            json_res = json.loads(res)["reportname"][0]
+            eq_(req_reportname, json_res, "No %s" % json_res)
+        except:
+            raise ResponseIsNullException(self.ra.appid)
 
     def test_001_channelinfo_install_top5_byhour(self):
         """001:来源分析>>渠道效果对比>>激活趋势TOP5"""
@@ -219,3 +225,14 @@ class Test_Report(object):
         data = self.data
         res = self.ra.action(reportname, data)
         self.checkReportName(reportname, res)
+
+    @attr(mode='1')
+    def test_026_sdk_debug_device_count(self):
+        """026:新建APP>>数据测试>>调试设备列表"""
+        reportname = "sdk_debug_device_count"
+        data = {
+            "appid": self.ra.appid
+        }
+        res = self.ra.action(reportname, data)
+        self.checkReportName(reportname, res)
+
