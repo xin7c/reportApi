@@ -35,7 +35,7 @@ class Test_Report(object):
 
     def setUp(self):
         print "[Start] @ %s" % datetime.today()
-        self.ra = Report_Api("0c88f597eba1f531d7318eb7c092c69f")
+        self.ra = Report_Api(self.appid)
 
     def tearDown(self):
         print "[End] @ %s" % datetime.today()
@@ -231,8 +231,7 @@ class Test_Report(object):
         """026:新建APP>>数据测试>>调试设备列表"""
         reportname = "sdk_debug_device_count"
         data = {
-            "appid": self.ra.appid
+            "datatype": "list"
         }
         res = self.ra.action(reportname, data)
         self.checkReportName(reportname, res)
-

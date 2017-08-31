@@ -29,28 +29,27 @@ class Report_Api(object):
 
     def __init__(self, appid):
         self.headers = {
-            "Content-Type": "application/json"
+            "Content-Type": "application/x-www-form-urlencoded"
         }
         self.host = "http://ec2-54-223-136-157.cn-north-1.compute.amazonaws.com.cn:8089/api/trackingio"
         self.appid = appid
         # self.appid = "0c88f597eba1f531d7318eb7c092c69f"
 
-    def url_Maker(self, reportname, urlencode_data):
+    def url_Maker(self, reportname):
         """input : urlencode_data"""
-        _url = os.path.join(self.host, reportname, self.appid) + "?" + urlencode_data
+        _url = os.path.join(self.host, reportname, self.appid)
         return _url
 
     def action(self, reportname=None, data=None):
         """action"""
-        data = urllib.urlencode(data)
-        url = self.url_Maker(reportname=reportname,
-                             urlencode_data=data)
-        r = requests.post(url=url, headers=self.headers)
+        # print data
+        url = self.url_Maker(reportname=reportname)
+        r = requests.post(headers=self.headers, url=url, data=data)
         result = r.text
         print result
         return result
 
 
-if __name__ == "__main__":
-    ra = Report_Api()
-    ra.action()
+# if __name__ == "__main__":
+#     ra = Report_Api()
+#     ra.action()
