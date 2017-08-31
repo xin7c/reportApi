@@ -212,3 +212,10 @@ class Test_Report(object):
         data = self.data
         res = self.ra.action(reportname, data)
         self.checkReportName(reportname, res)
+
+    def test_025_campaigninfo_h5_bycampaign(self):
+        """025:来源分析>>推广活动详情>>推广活动>>H5监测数据"""
+        reportname = "campaigninfo_h5_bycampaign"
+        data = self.data
+        res = self.ra.action(reportname, data)
+        self.checkReportName(reportname, res)
