@@ -10,7 +10,15 @@ Reyun Hot@@@
 sudo pip install nose_html_reporting
 
 2：
+mac
 nosetests report_cases.py --with-html --html-report=/Users/xuchu/reyun-api/reportApi/logs/report_cases.html --html-report-template=/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/nose_html_reporting/templates/report2.jinja2 -v
+
+ubuntu
+nosetests report_cases.py --with-html --html-report=/home/xuchu/xcpy/reportApi/logs/report_cases.html --html-report-template=/usr/local/lib/python2.7/dist-packages/nose_html_reporting/templates/report2.jinja2 -v
+
+
+nosetests --with-html-output --html-out-file=/home/xuchu/xcpy/reportApi/logs/report_cases_03.html report_cases.py
+
 
 ========================================
 [命令行]根据attr[指定/跳过]执行case
