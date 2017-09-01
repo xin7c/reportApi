@@ -23,6 +23,7 @@ from tools.localException import ResponseIsNullException
 class Test_Report(object):
     def __init__(self):
         self.appid = "0c88f597eba1f531d7318eb7c092c69f"
+        self.campaignid = "_default_"
         self.data = {
             "startdate": "2017-07-01",
             "enddate": "2017-08-28"
@@ -85,7 +86,7 @@ class Test_Report(object):
         self.checkReportName(reportname, res)
 
     def test_006_roi_bychannel(self):
-        """006:来源分析>>推广活动详情>>百度关键词"""
+        """006:来源分析>>推广活动详情>>百度关键词???"""
         reportname = "roi_bychannel"
         res = self.ra.action(reportname, self.data_install_pay)
         self.checkReportName(reportname, res)
@@ -234,5 +235,34 @@ class Test_Report(object):
         data = {
             "datatype": "list"
         }
+        res = self.ra.action(reportname, data)
+        self.checkReportName(reportname, res)
+
+    def test_027_click_byhour(self):
+        """027:仪表盘>>点击量趋势（按小时）"""
+        reportname = "click_byhour"
+        data = self.data
+        res = self.ra.action(reportname, data)
+        self.checkReportName(reportname, res)
+
+    def test_028_bd_bycampaign_count(self):
+        """028:来源分析>>推广活动详情>>百度关键词???"""
+        reportname = "bd_bycampaign_count"
+        data = self.data
+        res = self.ra.action(reportname, data)
+        self.checkReportName(reportname, res)
+
+    def test_029_channelinfo_reged_top5_byds(self):
+        """029:来源分析>>渠道效果对比>>注册趋势TOP5"""
+        reportname = "channelinfo_reged_top5_byds"
+        data = self.data
+        res = self.ra.action(reportname, data)
+        self.checkReportName(reportname, res)
+
+    def test_030_bd_bycreative(self):
+        """030:来源分析>>推广活动详情>>百度关键词???"""
+        reportname = "bd_bycreative"
+        data = self.data
+        data["campaignid"] = "_default_"
         res = self.ra.action(reportname, data)
         self.checkReportName(reportname, res)
