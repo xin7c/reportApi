@@ -8,4 +8,4 @@ uri = reportURI.uri
 
 print len(uri)
 for i,j in enumerate(uri):
-    print i+1, j["reportname"]
+    print i+1, j["reportname"], j["desc"]

@@ -387,6 +387,3 @@ class Test_Report(object):
         data["datatype"] = "char"
         res = self.ra.action(reportname, data)
         self.checkReportName(reportname, res)
-
-
-
