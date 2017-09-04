@@ -110,6 +110,7 @@ class Test_Report(object):
         reportname = "retention_dau_dau_byds"
         data = self.data
         data["usergroupsql"] = ""
+        data["datatype"] = "char"
         res = self.ra.action(reportname, data)
         self.checkReportName(reportname, res)
 
@@ -127,109 +128,221 @@ class Test_Report(object):
         res = self.ra.action(reportname, data)
         self.checkReportName(reportname, res)
 
-    def test_012_retention_install_dau_byweekk(self):
+    def test_012_retention_install_dau_byweek(self):
         """012:新增活跃日留存"""
         reportname = "retention_install_dau_byweek"
         data = self.data
         data["usergroupsql"] = ""
+        data["datatype"] = "char"
         res = self.ra.action(reportname, data)
         self.checkReportName(reportname, res)
 
-    def test_013_realtime_install(self):
-        """013:新增活跃日留存？？？"""
+    def test_013_bd_bycampaign(self):
+        """013:来源分析>>推广活动详情>>百度关键词???"""
+        reportname = "bd_bycampaign"
+        data = self.data
+        data["campaignid"] = "_default"
+        res = self.ra.action(reportname, data)
+        self.checkReportName(reportname, res)
+
+    def test_014_roi_byds(self):
+        """014:来源分析>>推广活动详情>>百度关键词???"""
+        reportname = "roi_byds"
+        data = self.data_install_pay
+        data["datatype"] = "list"
+        res = self.ra.action(reportname, data)
+        self.checkReportName(reportname, res)
+
+    def test_015_reged_byds(self):
+        """042:仪表盘>>注册量趋势（按天）"""
+        reportname = "reged_byds"
+        data = self.data
+        res = self.ra.action(reportname, data)
+        self.checkReportName(reportname, res)
+
+    def test_016_realtime_income(self):
+        """016:实时>>实时点击量"""
+        reportname = "realtime_income"
+        data = self.data
+        res = self.ra.action(reportname, data)
+        self.checkReportName(reportname, res)
+
+    def test_017_channelinfo_click_top5_byds(self):
+        """017:来源分析>>渠道效果对比>>点击趋势TOP5"""
+        reportname = "channelinfo_click_top5_byds"
+        data = self.data
+        res = self.ra.action(reportname, data)
+        self.checkReportName(reportname, res)
+
+    def test_018_bd_bycreative(self):
+        """018:来源分析>>推广活动详情>>百度关键词???"""
+        reportname = "bd_bycreative"
+        data = self.data
+        data["campaignid"] = self.campaignid
+        res = self.ra.action(reportname, data)
+        self.checkReportName(reportname, res)
+
+    def test_019_campaigninfo_bydatecampaign(self):
+        """019:来源分析>>推广活动详情>>推广活动按日期分组???"""
+        reportname = "campaigninfo_bydatecampaign"
+        data = self.data
+        res = self.ra.action(reportname, data)
+        self.checkReportName(reportname, res)
+
+    def test_020_device_byresolution(self):
+        """020:决策支持>>设备分析>>分辨率列表???"""
+        reportname = "device_byresolution"
+        data = self.data
+        res = self.ra.action(reportname, data)
+        self.checkReportName(reportname, res)
+
+    def test_021_channelinfo_reged_top5_byhour(self):
+        """021:来源分析>>渠道效果对比>>注册趋势TOP5???"""
+        reportname = "channelinfo_reged_top5_byhour"
+        data = self.data
+        res = self.ra.action(reportname, data)
+        self.checkReportName(reportname, res)
+
+    def test_022_campaigninfo_bycampgroup(self):
+        """022:来源分析>>推广活动详情>>推广活动组???"""
+        reportname = "campaigninfo_bycampgroup"
+        data = self.data
+        res = self.ra.action(reportname, data)
+        self.checkReportName(reportname, res)
+
+    def test_023_dau_byhour(self):
+        """023:仪表盘>>DAU趋势（按小时）"""
+        reportname = "dau_byhour"
+        data = self.data
+        res = self.ra.action(reportname, data)
+        self.checkReportName(reportname, res)
+
+    def test_024_campaigninfo_bychannel(self):
+        """024:来源分析>>推广活动详情>>推广活动"""
+        reportname = "campaigninfo_bychannel"
+        data = self.data
+        res = self.ra.action(reportname, data)
+        self.checkReportName(reportname, res)
+
+    def test_025_install_byds(self):
+        """025:仪表盘>>激活量趋势（按天）"""
+        reportname = "install_byds"
+        data = self.data
+        res = self.ra.action(reportname, data)
+        self.checkReportName(reportname, res)
+
+    def test_026_channelinfo_bychannel(self):
+        """026:来源分析>>渠道效果对比>>渠道详情"""
+        reportname = "channelinfo_bychannel"
+        data = self.data
+        res = self.ra.action(reportname, data)
+        self.checkReportName(reportname, res)
+
+    def test_027_retention_install_dau_byweekk(self):
+        """027:新增活跃日留存[重复于012]"""
+        reportname = "retention_install_dau_byweek"
+        data = self.data
+        data["usergroupsql"] = ""
+        data["datatype"] = "char"
+        res = self.ra.action(reportname, data)
+        self.checkReportName(reportname, res)
+
+    def test_028_realtime_install(self):
+        """028:新增活跃日留存？？？"""
         reportname = "realtime_install"
         data = self.data
         res = self.ra.action(reportname, data)
         self.checkReportName(reportname, res)
 
-    def test_014_decision_payment_level_byds(self):
-        """014:决策支持>>付费洞察>>新用户已付费情况"""
+    def test_029_decision_payment_level_byds(self):
+        """029:决策支持>>付费洞察>>新用户已付费情况"""
         reportname = "decision_payment_level_byds"
         data = self.data
         res = self.ra.action(reportname, data)
         self.checkReportName(reportname, res)
 
-    def test_015_rate_install_byds(self):
-        """015:仪表盘>>激活率趋势（按天）"""
+    def test_030_rate_install_byds(self):
+        """030:仪表盘>>激活率趋势（按天）"""
         reportname = "rate_install_byds"
         data = self.data
         res = self.ra.action(reportname, data)
         self.checkReportName(reportname, res)
 
-    def test_016_rate_install_byhour(self):
-        """016:仪表盘>>激活率趋势（按小时）"""
+    def test_031_rate_install_byhour(self):
+        """031:仪表盘>>激活率趋势（按小时）"""
         reportname = "rate_install_byhour"
         data = self.data
         res = self.ra.action(reportname, data)
         self.checkReportName(reportname, res)
 
-    def test_017_device_bymodel(self):
-        """017:决策支持>>设备分析>>型号列表"""
+    def test_032_device_bymodel(self):
+        """032:决策支持>>设备分析>>型号列表"""
         reportname = "device_bymodel"
         data = self.data
         res = self.ra.action(reportname, data)
         self.checkReportName(reportname, res)
 
-    def test_018_device_byos(self):
-        """018:决策支持>>设备分析>>系统列表"""
+    def test_033_device_byos(self):
+        """033:决策支持>>设备分析>>系统列表"""
         reportname = "device_byos"
         data = self.data
         res = self.ra.action(reportname, data)
         self.checkReportName(reportname, res)
 
-    def test_019_bd_bykwid(self):
-        """019:来源分析>>推广活动详情>>百度关键词???"""
+    def test_034_bd_bykwid(self):
+        """034:来源分析>>推广活动详情>>百度关键词???"""
         reportname = "bd_bykwid"
         data = self.data
         data["campaignid"] = "_default_"
         res = self.ra.action(reportname, data)
         self.checkReportName(reportname, res)
 
-    def test_020_income_byhour(self):
-        """020:仪表盘>>收入趋势（按小时）"""
+    def test_035_income_byhour(self):
+        """035:仪表盘>>收入趋势（按小时）"""
         reportname = "income_byhour"
         data = self.data
         res = self.ra.action(reportname, data)
         self.checkReportName(reportname, res)
 
-    def test_021_device_bycarrier(self):
-        """021:决策支持>>设备分析>>运营商列表"""
+    def test_036_device_bycarrier(self):
+        """036:决策支持>>设备分析>>运营商列表"""
         reportname = "device_bycarrier"
         data = self.data
         res = self.ra.action(reportname, data)
         self.checkReportName(reportname, res)
 
-    def test_022_rate_retentiond1_byds(self):
-        """022:仪表盘>>次日留存趋势（按天）"""
+    def test_037_rate_retentiond1_byds(self):
+        """037:仪表盘>>次日留存趋势（按天）"""
         reportname = "rate_retentiond1_byds"
         data = self.data
         res = self.ra.action(reportname, data)
         self.checkReportName(reportname, res)
 
-    def test_023_retention_dau_dau_bymonth(self):
-        """023:活跃活跃月留存"""
+    def test_038_retention_dau_dau_bymonth(self):
+        """038:活跃活跃月留存"""
         reportname = "retention_dau_dau_bymonth"
         data = self.data
         data["usergroupsql"] = ""
+        data["datatype"] = "char"
         res = self.ra.action(reportname, data)
         self.checkReportName(reportname, res)
 
-    def test_024_decision_payment_rmb_byds(self):
-        """024:决策支持>>付费洞察>>新用户付费分布"""
+    def test_039_decision_payment_rmb_byds(self):
+        """039:决策支持>>付费洞察>>新用户付费分布"""
         reportname = "decision_payment_rmb_byds"
         data = self.data
         res = self.ra.action(reportname, data)
         self.checkReportName(reportname, res)
 
-    def test_025_campaigninfo_h5_bycampaign(self):
-        """025:来源分析>>推广活动详情>>推广活动>>H5监测数据"""
+    def test_040_campaigninfo_h5_bycampaign(self):
+        """040:来源分析>>推广活动详情>>推广活动>>H5监测数据"""
         reportname = "campaigninfo_h5_bycampaign"
         data = self.data
         res = self.ra.action(reportname, data)
         self.checkReportName(reportname, res)
 
-    def test_026_sdk_debug_device_count(self):
-        """026:新建APP>>数据测试>>调试设备列表"""
+    def test_041_sdk_debug_device_count(self):
+        """041:新建APP>>数据测试>>调试设备列表"""
         reportname = "sdk_debug_device_count"
         data = {
             "datatype": "list"
@@ -237,111 +350,43 @@ class Test_Report(object):
         res = self.ra.action(reportname, data)
         self.checkReportName(reportname, res)
 
-    def test_027_click_byhour(self):
-        """027:仪表盘>>点击量趋势（按小时）"""
+    def test_042_click_byhour(self):
+        """042:仪表盘>>点击量趋势（按小时）"""
         reportname = "click_byhour"
         data = self.data
         res = self.ra.action(reportname, data)
         self.checkReportName(reportname, res)
 
-    def test_028_bd_bycampaign_count(self):
-        """028:来源分析>>推广活动详情>>百度关键词???"""
+    def test_043_bd_bycampaign_count(self):
+        """043:来源分析>>推广活动详情>>百度关键词???"""
         reportname = "bd_bycampaign_count"
         data = self.data
         res = self.ra.action(reportname, data)
         self.checkReportName(reportname, res)
 
-    def test_029_channelinfo_reged_top5_byds(self):
-        """029:来源分析>>渠道效果对比>>注册趋势TOP5"""
+    def test_044_channelinfo_reged_top5_byds(self):
+        """044:来源分析>>渠道效果对比>>注册趋势TOP5???"""
         reportname = "channelinfo_reged_top5_byds"
         data = self.data
         res = self.ra.action(reportname, data)
         self.checkReportName(reportname, res)
 
-    def test_030_bd_bycreative(self):
-        """030:来源分析>>推广活动详情>>百度关键词???"""
+    def test_045_bd_bycreative(self):
+        """045:来源分析>>推广活动详情>>百度关键词???[重复于18]"""
         reportname = "bd_bycreative"
         data = self.data
         data["campaignid"] = "_default_"
         res = self.ra.action(reportname, data)
         self.checkReportName(reportname, res)
 
-    def test_031_campaigninfo_bydatecampaign(self):
-        """031:来源分析>>推广活动详情>>推广活动按日期分组"""
-        reportname = "campaigninfo_bydatecampaign"
-        data = self.data
-        res = self.ra.action(reportname, data)
-        self.checkReportName(reportname, res)
-
-    def test_032_device_byresolution(self):
-        """032:决策支持>>设备分析>>分辨率列表"""
-        reportname = "device_byresolution"
-        data = self.data
-        res = self.ra.action(reportname, data)
-        self.checkReportName(reportname, res)
-
-    def test_033_channelinfo_reged_top5_byhour(self):
-        """033:来源分析>>渠道效果对比>>注册趋势TOP5"""
-        reportname = "channelinfo_reged_top5_byhour"
-        data = self.data
-        res = self.ra.action(reportname, data)
-        self.checkReportName(reportname, res)
-
-    def test_034_campaigninfo_bycampgroup(self):
-        """034:来源分析>>推广活动详情>>推广活动组"""
-        reportname = "campaigninfo_bycampgroup"
-        data = self.data
-        res = self.ra.action(reportname, data)
-        self.checkReportName(reportname, res)
-
-    def test_035_dau_byhour(self):
-        """035:仪表盘>>DAU趋势（按小时）"""
-        reportname = "dau_byhour"
-        data = self.data
-        res = self.ra.action(reportname, data)
-        self.checkReportName(reportname, res)
-
-    def test_036_campaigninfo_bychannel(self):
-        """036:来源分析>>推广活动详情>>推广活动"""
-        reportname = "campaigninfo_bychannel"
-        data = self.data
-        res = self.ra.action(reportname, data)
-        self.checkReportName(reportname, res)
-
-    def test_037_install_byds(self):
-        """037:仪表盘>>激活量趋势（按天）"""
-        reportname = "install_byds"
-        data = self.data
-        res = self.ra.action(reportname, data)
-        self.checkReportName(reportname, res)
-
-    def test_038_channelinfo_bychannel(self):
-        """038:来源分析>>渠道效果对比>>渠道详情"""
-        reportname = "channelinfo_bychannel"
-        data = self.data
-        res = self.ra.action(reportname, data)
-        self.checkReportName(reportname, res)
-
-    def test_039_retention_install_dau_byweek(self):
-        """039:新增活跃日留存"""
-        reportname = "retention_install_dau_byweek"
+    def test_046_retention_dau_dau_byweek(self):
+        """046:活跃活跃周留存"""
+        reportname = "retention_dau_dau_byweek"
         data = self.data
         data["usergroupsql"] = ""
+        data["datatype"] = "char"
         res = self.ra.action(reportname, data)
         self.checkReportName(reportname, res)
 
-    def test_040_bd_bycampaign(self):
-        """040:来源分析>>推广活动详情>>百度关键词???"""
-        reportname = "bd_bycampaign"
-        data = self.data
-        data["campaignid"] = "_default"
-        res = self.ra.action(reportname, data)
-        self.checkReportName(reportname, res)
 
-    def test_041_roi_byds(self):
-        """041:来源分析>>推广活动详情>>百度关键词???"""
-        reportname = "roi_byds"
-        data = self.data_install_pay
-        data["datatype"] = "list"
-        res = self.ra.action(reportname, data)
-        self.checkReportName(reportname, res)
+
