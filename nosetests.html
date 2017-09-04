@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Unit Test Report</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+<style>
+body {
+    font-family: Calibri, "Trebuchet MS", sans-serif;
+}
+* {
+    word-break: break-all;
+}
+table, td, th, .dataid {
+    border: 1px solid #aaa;
+    border-collapse: collapse;
+    background: #fff;
+}
+section {
+    background: rgba(0, 0, 0, 0.05);
+    margin: 2ex;
+    padding: 1ex;
+    border: 1px solid #999;
+    border-radius: 5px;
+}
+h1 {
+    font-size: 130%;
+}
+h2 {
+    font-size: 120%;
+}
+h3 {
+    font-size: 100%;
+}
+h4 {
+    font-size: 85%;
+}
+h1, h2, h3, h4, a[href] {
+    cursor: pointer;
+    color: #0074d9;
+    text-decoration: none;
+}
+h3 strong, a.failed {
+    color: #ff4136;
+}
+.failed {
+    color: #ff4136;
+}
+a.success {
+    color: #3d9970;
+}
+pre {
+    font-family: 'Consolas', 'Deja Vu Sans Mono',
+                 'Bitstream Vera Sans Mono', 'Monaco',
+                 'Courier New', monospace;
+}
+
+.test-details,
+.traceback {
+    display: none;
+}
+section:target .test-details {
+    display: block;
+}
+
+</style>
+</head>
+<body>
+    <h1>Overview</h1>
+    <section>
+        <table>
+            <tr>
+                <th>Class</th>
+                <th>Fail</th>
+                <th class="failed">Error</th>
+                <th>Skip</th>
+                <th>Success</th>
+                <th>Total</th>
+            </tr>
+                <tr>
+                    <td>xcpy.reportApi.report_cases.Test_Report</td>
+                    <td>0</td>
+                    <td class="failed">5</td>
+                    <td>0</td>
+                    <td>36</td>
+                    <td>41</td>
+                </tr>
+            <tr>
+                <td><strong>Total</strong></td>
+                <td>0</td>
+                <td class="failed">5</td>
+                <td>0</td>
+                <td>36</td>
+                <td>41</td>
+            </tr>
+        </table>
+    </section>
+    <h1>Failure details</h1>
+            <section>
+                <h2>xcpy.reportApi.report_cases.Test_Report (0 failures, 5 errors)</h2>
+                <div>
+                        <section id="xcpy.reportApi.report_cases.Test_Report:test_009_retention_dau_dau_byds">
+                            <h3>test_009_retention_dau_dau_byds: <strong>requests.exceptions.ReadTimeout</strong></h3>
+                            <div class="test-details">
+                                <h4>Traceback</h4>
+                                <pre class="traceback">Traceback (most recent call last):
+  File "/usr/lib/python2.7/unittest/case.py", line 329, in run
+    testMethod()
+  File "/home/xuchu/.local/lib/python2.7/site-packages/nose/case.py", line 197, in runTest
+    self.test(*self.arg)
+  File "/home/xuchu/xcpy/reportApi/report_cases.py", line 115, in test_009_retention_dau_dau_byds
+    res = self.ra.action(reportname, data)
+  File "/home/xuchu/xcpy/reportApi/report_main.py", line 46, in action
+    r = requests.post(headers=self.headers, url=url, data=data, timeout=5)
+  File "/usr/local/lib/python2.7/dist-packages/requests/api.py", line 112, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/requests/api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/requests/sessions.py", line 508, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/requests/sessions.py", line 618, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/requests/adapters.py", line 521, in send
+    raise ReadTimeout(e, request=request)
+ReadTimeout: HTTPConnectionPool(host='ec2-54-223-136-157.cn-north-1.compute.amazonaws.com.cn', port=8089): Read timed out. (read timeout=5)
+-------------------- >> begin captured stdout << ---------------------
+[Start] @ 2017-09-04 12:26:15.080437
+
+--------------------- >> end captured stdout << ----------------------
+-------------------- >> begin captured logging << --------------------
+urllib3.connectionpool: DEBUG: Starting new HTTP connection (1): ec2-54-223-136-157.cn-north-1.compute.amazonaws.com.cn
+--------------------- >> end captured logging << ---------------------
+</pre>
+                                <h4>Details</h4>
+                                <pre>HTTPConnectionPool(host='ec2-54-223-136-157.cn-north-1.compute.amazonaws.com.cn', port=8089): Read timed out. (read timeout=5)
+-------------------- >> begin captured stdout << ---------------------
+[Start] @ 2017-09-04 12:26:15.080437
+
+--------------------- >> end captured stdout << ----------------------
+-------------------- >> begin captured logging << --------------------
+urllib3.connectionpool: DEBUG: Starting new HTTP connection (1): ec2-54-223-136-157.cn-north-1.compute.amazonaws.com.cn
+--------------------- >> end captured logging << ---------------------</pre>
+                            </div>
+                        </section>
+                        <section id="xcpy.reportApi.report_cases.Test_Report:test_012_retention_install_dau_byweekk">
+                            <h3>test_012_retention_install_dau_byweekk: <strong>requests.exceptions.ReadTimeout</strong></h3>
+                            <div class="test-details">
+                                <h4>Traceback</h4>
+                                <pre class="traceback">Traceback (most recent call last):
+  File "/usr/lib/python2.7/unittest/case.py", line 329, in run
+    testMethod()
+  File "/home/xuchu/.local/lib/python2.7/site-packages/nose/case.py", line 197, in runTest
+    self.test(*self.arg)
+  File "/home/xuchu/xcpy/reportApi/report_cases.py", line 137, in test_012_retention_install_dau_byweekk
+    res = self.ra.action(reportname, data)
+  File "/home/xuchu/xcpy/reportApi/report_main.py", line 46, in action
+    r = requests.post(headers=self.headers, url=url, data=data, timeout=5)
+  File "/usr/local/lib/python2.7/dist-packages/requests/api.py", line 112, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/requests/api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/requests/sessions.py", line 508, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/requests/sessions.py", line 618, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/requests/adapters.py", line 521, in send
+    raise ReadTimeout(e, request=request)
+ReadTimeout: HTTPConnectionPool(host='ec2-54-223-136-157.cn-north-1.compute.amazonaws.com.cn', port=8089): Read timed out. (read timeout=5)
+-------------------- >> begin captured stdout << ---------------------
+[Start] @ 2017-09-04 12:26:21.409741
+
+--------------------- >> end captured stdout << ----------------------
+-------------------- >> begin captured logging << --------------------
+urllib3.connectionpool: DEBUG: Starting new HTTP connection (1): ec2-54-223-136-157.cn-north-1.compute.amazonaws.com.cn
+--------------------- >> end captured logging << ---------------------
+</pre>
+                                <h4>Details</h4>
+                                <pre>HTTPConnectionPool(host='ec2-54-223-136-157.cn-north-1.compute.amazonaws.com.cn', port=8089): Read timed out. (read timeout=5)
+-------------------- >> begin captured stdout << ---------------------
+[Start] @ 2017-09-04 12:26:21.409741
+
+--------------------- >> end captured stdout << ----------------------
+-------------------- >> begin captured logging << --------------------
+urllib3.connectionpool: DEBUG: Starting new HTTP connection (1): ec2-54-223-136-157.cn-north-1.compute.amazonaws.com.cn
+--------------------- >> end captured logging << ---------------------</pre>
+                            </div>
+                        </section>
+                        <section id="xcpy.reportApi.report_cases.Test_Report:test_023_retention_dau_dau_bymonth">
+                            <h3>test_023_retention_dau_dau_bymonth: <strong>requests.exceptions.ReadTimeout</strong></h3>
+                            <div class="test-details">
+                                <h4>Traceback</h4>
+                                <pre class="traceback">Traceback (most recent call last):
+  File "/usr/lib/python2.7/unittest/case.py", line 329, in run
+    testMethod()
+  File "/home/xuchu/.local/lib/python2.7/site-packages/nose/case.py", line 197, in runTest
+    self.test(*self.arg)
+  File "/home/xuchu/xcpy/reportApi/report_cases.py", line 216, in test_023_retention_dau_dau_bymonth
+    res = self.ra.action(reportname, data)
+  File "/home/xuchu/xcpy/reportApi/report_main.py", line 46, in action
+    r = requests.post(headers=self.headers, url=url, data=data, timeout=5)
+  File "/usr/local/lib/python2.7/dist-packages/requests/api.py", line 112, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/requests/api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/requests/sessions.py", line 508, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/requests/sessions.py", line 618, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/requests/adapters.py", line 521, in send
+    raise ReadTimeout(e, request=request)
+ReadTimeout: HTTPConnectionPool(host='ec2-54-223-136-157.cn-north-1.compute.amazonaws.com.cn', port=8089): Read timed out. (read timeout=5)
+-------------------- >> begin captured stdout << ---------------------
+[Start] @ 2017-09-04 12:26:28.777413
+
+--------------------- >> end captured stdout << ----------------------
+-------------------- >> begin captured logging << --------------------
+urllib3.connectionpool: DEBUG: Starting new HTTP connection (1): ec2-54-223-136-157.cn-north-1.compute.amazonaws.com.cn
+--------------------- >> end captured logging << ---------------------
+</pre>
+                                <h4>Details</h4>
+                                <pre>HTTPConnectionPool(host='ec2-54-223-136-157.cn-north-1.compute.amazonaws.com.cn', port=8089): Read timed out. (read timeout=5)
+-------------------- >> begin captured stdout << ---------------------
+[Start] @ 2017-09-04 12:26:28.777413
+
+--------------------- >> end captured stdout << ----------------------
+-------------------- >> begin captured logging << --------------------
+urllib3.connectionpool: DEBUG: Starting new HTTP connection (1): ec2-54-223-136-157.cn-north-1.compute.amazonaws.com.cn
+--------------------- >> end captured logging << ---------------------</pre>
+                            </div>
+                        </section>
+                        <section id="xcpy.reportApi.report_cases.Test_Report:test_039_retention_install_dau_byweek">
+                            <h3>test_039_retention_install_dau_byweek: <strong>requests.exceptions.ReadTimeout</strong></h3>
+                            <div class="test-details">
+                                <h4>Traceback</h4>
+                                <pre class="traceback">Traceback (most recent call last):
+  File "/usr/lib/python2.7/unittest/case.py", line 329, in run
+    testMethod()
+  File "/home/xuchu/.local/lib/python2.7/site-packages/nose/case.py", line 197, in runTest
+    self.test(*self.arg)
+  File "/home/xuchu/xcpy/reportApi/report_cases.py", line 333, in test_039_retention_install_dau_byweek
+    res = self.ra.action(reportname, data)
+  File "/home/xuchu/xcpy/reportApi/report_main.py", line 46, in action
+    r = requests.post(headers=self.headers, url=url, data=data, timeout=5)
+  File "/usr/local/lib/python2.7/dist-packages/requests/api.py", line 112, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/requests/api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/requests/sessions.py", line 508, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/requests/sessions.py", line 618, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/requests/adapters.py", line 521, in send
+    raise ReadTimeout(e, request=request)
+ReadTimeout: HTTPConnectionPool(host='ec2-54-223-136-157.cn-north-1.compute.amazonaws.com.cn', port=8089): Read timed out. (read timeout=5)
+-------------------- >> begin captured stdout << ---------------------
+[Start] @ 2017-09-04 12:26:35.953612
+
+--------------------- >> end captured stdout << ----------------------
+-------------------- >> begin captured logging << --------------------
+urllib3.connectionpool: DEBUG: Starting new HTTP connection (1): ec2-54-223-136-157.cn-north-1.compute.amazonaws.com.cn
+--------------------- >> end captured logging << ---------------------
+</pre>
+                                <h4>Details</h4>
+                                <pre>HTTPConnectionPool(host='ec2-54-223-136-157.cn-north-1.compute.amazonaws.com.cn', port=8089): Read timed out. (read timeout=5)
+-------------------- >> begin captured stdout << ---------------------
+[Start] @ 2017-09-04 12:26:35.953612
+
+--------------------- >> end captured stdout << ----------------------
+-------------------- >> begin captured logging << --------------------
+urllib3.connectionpool: DEBUG: Starting new HTTP connection (1): ec2-54-223-136-157.cn-north-1.compute.amazonaws.com.cn
+--------------------- >> end captured logging << ---------------------</pre>
+                            </div>
+                        </section>
+                        <section id="xcpy.reportApi.report_cases.Test_Report:test_041_roi_byds">
+                            <h3>test_041_roi_byds: <strong>xcpy.reportApi.tools.localException.ResponseIsNullException</strong></h3>
+                            <div class="test-details">
+                                <h4>Traceback</h4>
+                                <pre class="traceback">Traceback (most recent call last):
+  File "/usr/lib/python2.7/unittest/case.py", line 329, in run
+    testMethod()
+  File "/home/xuchu/.local/lib/python2.7/site-packages/nose/case.py", line 197, in runTest
+    self.test(*self.arg)
+  File "/home/xuchu/xcpy/reportApi/report_cases.py", line 349, in test_041_roi_byds
+    self.checkReportName(reportname, res)
+  File "/home/xuchu/xcpy/reportApi/report_cases.py", line 53, in checkReportName
+    raise ResponseIsNullException(self.ra.appid)
+ResponseIsNullException
+</pre>
+                                <h4>Details</h4>
+                                <pre>
+-------------------- >> begin captured stdout << ---------------------
+[Start] @ 2017-09-04 12:26:41.024635
+<html><head><title>Apache Tomcat/6.0.44 - Error report</title><style><!--H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A {color : black;}A.name {color : black;}HR {color : #525D76;}--></style> </head><body><h1>HTTP Status 500 - Request processing failed; nested exception is java.lang.NullPointerException</h1><HR size="1" noshade="noshade"><p><b>type</b> Exception report</p><p><b>message</b> <u>Request processing failed; nested exception is java.lang.NullPointerException</u></p><p><b>description</b> <u>The server encountered an internal error that prevented it from fulfilling this request.</u></p><p><b>exception</b> <pre>org.springframework.web.util.NestedServletException: Request processing failed; nested exception is java.lang.NullPointerException
+	org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:948)
+	org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:838)
+	javax.servlet.http.HttpServlet.service(HttpServlet.java:643)
+	org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:812)
+	javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+</pre></p><p><b>root cause</b> <pre>java.lang.NullPointerException
+	java.text.SimpleDateFormat.parse(SimpleDateFormat.java:1439)
+	java.text.DateFormat.parse(DateFormat.java:364)
+	com.reyun.util.DateUtil.getDateInterval(DateUtil.java:609)
+	com.reyun.report.ReportBase.fillListKey(ReportBase.java:497)
+	com.reyun.report.ReportBase.fill(ReportBase.java:549)
+	com.reyun.report.ReportBase.queyData(ReportBase.java:117)
+	com.reyun.service.ReportService.report(ReportService.java:89)
+	com.reyun.service.ReportService$$FastClassByCGLIB$$3b51256c.invoke(&lt;generated&gt;)
+	org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:698)
+	org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:150)
+	org.springframework.cache.interceptor.CacheInterceptor$1.invoke(CacheInterceptor.java:58)
+	org.springframework.cache.interceptor.CacheAspectSupport.execute(CacheAspectSupport.java:214)
+	org.springframework.cache.interceptor.CacheInterceptor.invoke(CacheInterceptor.java:66)
+	org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:172)
+	org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:631)
+	com.reyun.service.ReportService$$EnhancerByCGLIB$$e1ce6a07.report(&lt;generated&gt;)
+	com.reyun.controller.ReportController.report(ReportController.java:82)
+	sun.reflect.GeneratedMethodAccessor25.invoke(Unknown Source)
+	sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	java.lang.reflect.Method.invoke(Method.java:498)
+	org.springframework.web.method.support.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:219)
+	org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:132)
+	org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
+	org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandleMethod(RequestMappingHandlerAdapter.java:745)
+	org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:686)
+	org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:80)
+	org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:925)
+	org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:856)
+	org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:936)
+	org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:838)
+	javax.servlet.http.HttpServlet.service(HttpServlet.java:643)
+	org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:812)
+	javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+</pre></p><p><b>note</b> <u>The full stack trace of the root cause is available in the Apache Tomcat/6.0.44 logs.</u></p><HR size="1" noshade="noshade"><h3>Apache Tomcat/6.0.44</h3></body></html>
+[异常]:返回值为空Json
+[appid]0c88f597eba1f531d7318eb7c092c69f
+
+--------------------- >> end captured stdout << ----------------------
+-------------------- >> begin captured logging << --------------------
+urllib3.connectionpool: DEBUG: Starting new HTTP connection (1): ec2-54-223-136-157.cn-north-1.compute.amazonaws.com.cn
+urllib3.connectionpool: DEBUG: http://ec2-54-223-136-157.cn-north-1.compute.amazonaws.com.cn:8089 "POST /api/trackingio/roi_byds/0c88f597eba1f531d7318eb7c092c69f HTTP/1.1" 500 None
+--------------------- >> end captured logging << ---------------------</pre>
+                            </div>
+                        </section>
+                </div>
+            </section>
+
+    <h1>All tests</h1>
+    <section>
+        <h2>xcpy.reportApi.report_cases.Test_Report (0 failures, 5 errors)</h2>
+        <ul>
+                <li><a class="success">test_001_channelinfo_install_top5_byhour</a></li>
+                <li><a class="success">test_002_realtime_payer</a></li>
+                <li><a class="success">test_003_install_byhour</a></li>
+                <li><a class="success">test_004_campaigninfo_bypackagecampaign</a></li>
+                <li><a class="success">test_005_campaigninfo_bysubpackagecampaign</a></li>
+                <li><a class="success">test_006_roi_bychannel</a></li>
+                <li><a class="success">test_007_channelinfo_base_top5_bychannel</a></li>
+                <li><a class="success">test_008_channelincome_top10_bychannel</a></li>
+                <li><a class="failed" href="#xcpy.reportApi.report_cases.Test_Report:test_009_retention_dau_dau_byds">test_009_retention_dau_dau_byds</a></li>
+                <li><a class="success">test_010_realtime_dau</a></li>
+                <li><a class="success">test_011_realtime_dupclick</a></li>
+                <li><a class="failed" href="#xcpy.reportApi.report_cases.Test_Report:test_012_retention_install_dau_byweekk">test_012_retention_install_dau_byweekk</a></li>
+                <li><a class="success">test_013_realtime_install</a></li>
+                <li><a class="success">test_014_decision_payment_level_byds</a></li>
+                <li><a class="success">test_015_rate_install_byds</a></li>
+                <li><a class="success">test_016_rate_install_byhour</a></li>
+                <li><a class="success">test_017_device_bymodel</a></li>
+                <li><a class="success">test_018_device_byos</a></li>
+                <li><a class="success">test_019_bd_bykwid</a></li>
+                <li><a class="success">test_020_income_byhour</a></li>
+                <li><a class="success">test_021_device_bycarrier</a></li>
+                <li><a class="success">test_022_rate_retentiond1_byds</a></li>
+                <li><a class="failed" href="#xcpy.reportApi.report_cases.Test_Report:test_023_retention_dau_dau_bymonth">test_023_retention_dau_dau_bymonth</a></li>
+                <li><a class="success">test_024_decision_payment_rmb_byds</a></li>
+                <li><a class="success">test_025_campaigninfo_h5_bycampaign</a></li>
+                <li><a class="success">test_026_sdk_debug_device_count</a></li>
+                <li><a class="success">test_027_click_byhour</a></li>
+                <li><a class="success">test_028_bd_bycampaign_count</a></li>
+                <li><a class="success">test_029_channelinfo_reged_top5_byds</a></li>
+                <li><a class="success">test_030_bd_bycreative</a></li>
+                <li><a class="success">test_031_campaigninfo_bydatecampaign</a></li>
+                <li><a class="success">test_032_device_byresolution</a></li>
+                <li><a class="success">test_033_channelinfo_reged_top5_byhour</a></li>
+                <li><a class="success">test_034_campaigninfo_bycampgroup</a></li>
+                <li><a class="success">test_035_dau_byhour</a></li>
+                <li><a class="success">test_036_campaigninfo_bychannel</a></li>
+                <li><a class="success">test_037_install_byds</a></li>
+                <li><a class="success">test_038_channelinfo_bychannel</a></li>
+                <li><a class="failed" href="#xcpy.reportApi.report_cases.Test_Report:test_039_retention_install_dau_byweek">test_039_retention_install_dau_byweek</a></li>
+                <li><a class="success">test_040_bd_bycampaign</a></li>
+                <li><a class="failed" href="#xcpy.reportApi.report_cases.Test_Report:test_041_roi_byds">test_041_roi_byds</a></li>
+        </ul>
+    </section>
+</body>
+<script>
+    Array.prototype.forEach.call(document.querySelectorAll('h1, h2, h3, h4'), function(el) {
+        el.addEventListener('click', function() {
+            el.nextElementSibling.style.display = document.defaultView.getComputedStyle(el.nextElementSibling).display == 'none' ? 'block' : 'none';
+        })
+    })
+</script>
+</html>

@@ -42,9 +42,8 @@ class Report_Api(object):
 
     def action(self, reportname=None, data=None):
         """action"""
-        # print data
         url = self.url_Maker(reportname=reportname)
-        r = requests.post(headers=self.headers, url=url, data=data)
+        r = requests.post(headers=self.headers, url=url, data=data, timeout=5)
         result = r.text
         print result
         return result
