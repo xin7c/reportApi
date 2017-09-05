@@ -470,4 +470,121 @@ uri = [
         "key": "hours",
         "desc": "来源分析>>渠道效果对比>>付费设备趋势TOP5"
     },
+    {
+        "args": "[{name=appid, required=true, example=app unique key, 32字符, 例:37a4c0f4cc0810ccd34c61edb409c6e4}, {name=startdate, required=true, example=起始日期, 例:2016-12-01}, {name=enddate, required=true, example=结束日期, 例:2016-12-07}, {name=cid, required=true, example=渠道id, 例：23}, {name=iscache, required=false, example=是否需要缓存, 1为是，0为不缓存，默认1}]",
+        "reportname": "subchannel_bycampaign",
+        "datasource": "mysql",
+        "column": "[campaignid, num_click_total, num_click, dupnum_click_all, num_ins, dupnum_reg, rate_install]",
+        "name": "[推广活动, 点击总数, 有效点击总数, 排重点击数, 排重激活设备数, 排重注册设备数, 激活率]",
+        "key": "campaignid",
+        "desc": "来源分析>>推广活动详情>>子渠道"
+    },
+    {
+        "args": "[{name=appid, required=true, example=app unique key, 32字符, 例:37a4c0f4cc0810ccd34c61edb409c6e4}, {name=startdate, required=true, example=起始日期, 例:2016-12-01}, {name=enddate, required=true, example=结束日期, 例:2016-12-07}, {name=iscache, required=false, example=是否需要缓存, 1为是，0为不缓存，默认1}]",
+        "reportname": "dau_byds",
+        "datasource": "mysql",
+        "column": "[ds, dau]",
+        "name": "[日期, DAU]",
+        "key": "ds",
+        "desc": "仪表盘>>DAU趋势（按天）"
+    },
+    {
+        "args": "[{name=appid, required=true, example=app unique key, 32字符, 例:37a4c0f4cc0810ccd34c61edb409c6e4}, {name=startdate, required=true, example=起始日期, 例:2016-12-01}, {name=enddate, required=true, example=结束日期, 例:2016-12-07}, {name=iscache, required=false, example=是否需要缓存, 1为是，0为不缓存，默认1}]",
+        "reportname": "channelclick_top10_bychannel",
+        "datasource": "mysql",
+        "column": "[cid, num_click]",
+        "name": "[渠道, 点击量]",
+        "key": "cid",
+        "desc": "仪表盘>>渠道点击top10"
+    },
+    {
+        "args": "[{name=appid, required=true, example=app unique key, 32字符, 例:37a4c0f4cc0810ccd34c61edb409c6e4}, {name=startdate, required=true, example=起始日期, 例:2016-12-01}, {name=enddate, required=true, example=结束日期, 例:2016-12-07}, {name=iscache, required=false, example=是否需要缓存, 1为是，0为不缓存，默认1}, {name=campaignid, required=false, example=推广活动 唯一键, 32位字符, 例:37a4c0f4cc0810ccd34c61edb409c6e4}, {name=isnature, required=false, example=是否展现自然量数据, 1为是，0为不显示，默认1}]",
+        "reportname": "reged_byhour",
+        "datasource": "mysql",
+        "column": "[hours, num_reged_cam, num_reged_def]",
+        "name": "[小时, 推广量, 自然量]",
+        "key": "hours",
+        "desc": "仪表盘>>注册量趋势（按小时）"
+    },
+    {
+        "args": "[{name=appid, required=true, example=app unique key, 32字符, 例:37a4c0f4cc0810ccd34c61edb409c6e4}, {name=startdate, required=true, example=起始日期, 例:2016-12-01}, {name=enddate, required=true, example=结束日期, 例:2016-12-07}, {name=usergroupsql, required=true, example=用户组sql，如果没有用户组筛选，就传空字符串}, {name=iscache, required=false, example=是否需要缓存, 1为是，0为不缓存，默认1}]",
+        "reportname": "retention_install_dau_byds",
+        "datasource": "presto",
+        "column": "[ds, init, retention1, retention2, retention3, retention4, retention5, retention6, retention7, retention14, retention30]",
+        "name": "[日期, 初始人数, 1日后, 2日后, 3日后, 4日后, 5日后, 6日后, 7日后, 14日后, 30日后]",
+        "key": "ds",
+        "desc": "新增活跃日留存"
+    },
+    {
+        "args": "[{name=appid, required=true, example=app unique key, 32字符, 例:37a4c0f4cc0810ccd34c61edb409c6e4}, {name=startdate, required=true, example=起始月的1号, 例:2016-12-01}, {name=enddate, required=true, example=结束月的1号, 例:2017-02-01}, {name=usergroupsql, required=true, example=用户组sql，如果没有用户组筛选，就传空字符串}, {name=iscache, required=false, example=是否需要缓存, 1为是，0为不缓存，默认1}]",
+        "reportname": "retention_install_dau_bymonth",
+        "datasource": "presto",
+        "column": "[ds, init, retention1, retention2, retention3]",
+        "name": "[日期, 初始人数, 1月后, 2月后, 3月后]",
+        "key": "",
+        "desc": "新增活跃月留存"
+    },
+    {
+        "args": "[{name=appid, required=true, example=app unique key, 32字符, 例:37a4c0f4cc0810ccd34c61edb409c6e4}, {name=startdate, required=true, example=起始日期, 例:2016-12-01}, {name=enddate, required=true, example=结束日期, 例:2016-12-07}, {name=iscache, required=false, example=是否需要缓存, 1为是，0为不缓存，默认1}]",
+        "reportname": "delay_install_bycampaign",
+        "datasource": "mysql",
+        "column": "[campaignid, num_install, num_clk_d0, num_clk_d1, num_clk_d2, num_clk_d3, num_clk_d4, num_clk_d5, num_clk_d6, num_clk_d7, num_clk_d8_14, num_clk_d15]",
+        "name": "[推广活动, 排重激活设备数, 当日点击, 前1日点击, 前2日点击, 前3日点击, 前4日点击, 前5日点击, 前6日点击, 前7日点击, 前8-14日点击, 15日前点击]",
+        "key": "campaignid",
+        "desc": "归因分析>>激活延迟分析>>按激活"
+    },
+    {
+        "args": "[{name=appid, required=true, example=app unique key, 32字符, 例:37a4c0f4cc0810ccd34c61edb409c6e4}, {name=startdate, required=true, example=起始日期, 例:2016-12-01}, {name=enddate, required=true, example=结束日期, 例:2016-12-07}, {name=iscache, required=false, example=是否需要缓存, 1为是，0为不缓存，默认1}]",
+        "reportname": "delay_click_bycampaign",
+        "datasource": "mysql",
+        "column": "[campaignid, num_click, dupnum_click_all, dupnum_click_day, num_ins_d0, num_ins_d1, num_ins_d2, num_ins_d3, num_ins_d4, num_ins_d5, num_ins_d6, num_ins_d7, num_ins_d8_14, num_ins_d15]",
+        "name": "[推广活动, 有效点击总数, 排重点击数, 按天排重点击数, 当日激活, 后1日激活, 后2日激活, 后3日激活, 后4日激活, 后5日激活, 后6日激活, 后7日激活, 后8-14日激活, 15日后激活]",
+        "key": "campaignid",
+        "desc": "归因分析>>激活延迟分析>>按点击"
+    },
+    {
+        "args": "[{name=appid, required=true, example=app unique key, 32字符, 例:37a4c0f4cc0810ccd34c61edb409c6e4}]",
+        "reportname": "app_install_register_byappids",
+        "datasource": "mysql",
+        "column": "[cum_num_install, cum_dupnum_reged_mon]",
+        "name": "[激活, 注册]",
+        "key": "appid",
+        "desc": "APP/H5>>APP列表>>激活注册数"
+    },
+    {
+        "args": "[{name=appid, required=true, example=app unique key, 32字符, 例:37a4c0f4cc0810ccd34c61edb409c6e4}, {name=startdate, required=true, example=起始月的1号, 例:2016-12-01}, {name=enddate, required=true, example=结束月的1号, 例:2017-02-01}, {name=usergroupsql, required=true, example=用户组sql，如果没有用户组筛选，就传空字符串}, {name=iscache, required=false, example=是否需要缓存, 1为是，0为不缓存，默认1}]",
+        "reportname": "retention_install_dau_bymonth",
+        "datasource": "presto",
+        "column": "[ds, init, retention1, retention2, retention3]",
+        "name": "[日期, 初始人数, 1月后, 2月后, 3月后]",
+        "key": "",
+        "desc": "新增活跃月留存"
+    },
+    {
+        "args": "[{name=appid, required=true, example=app unique key, 32字符, 例:37a4c0f4cc0810ccd34c61edb409c6e4}, {name=startdate, required=true, example=起始日期, 例:2016-12-01}, {name=enddate, required=true, example=结束日期, 例:2016-12-07}, {name=cid, required=false, example=渠道id, 例：23}, {name=iscache, required=false, example=是否需要缓存, 1为是，0为不缓存，默认1}]",
+        "reportname": "channelinfo_amount_top5_byds",
+        "datasource": "mysql",
+        "column": "[ds, amt_income_all_user]",
+        "name": "[日期, 付费设备数]",
+        "key": "ds",
+        "desc": "来源分析>>渠道效果对比>>收入趋势TOP5"
+    },
+    {
+        "args": "[{name=appid, required=true, example=app unique key, 32字符, 例:37a4c0f4cc0810ccd34c61edb409c6e4}, {name=startdate, required=true, example=起始日期, 例:2016-12-01}, {name=enddate, required=true, example=结束日期, 例:2016-12-07}, {name=iscache, required=false, example=是否需要缓存, 1为是，0为不缓存，默认1}]",
+        "reportname": "device_byregion",
+        "datasource": "mysql",
+        "column": "[region, num_ins, dau, num_startup]",
+        "name": "[地域, 激活设备, 活跃设备, 启动次数]",
+        "key": "region",
+        "desc": "决策支持>>设备分析>>地域列表"
+    },
+    {
+        "args": "[{name=appid, required=true, example=app unique key, 32字符, 例:37a4c0f4cc0810ccd34c61edb409c6e4}, {name=startdate, required=true, example=起始周第一天, 例:2016-12-01}, {name=enddate, required=true, example=结束周第一天, 例:2016-12-07}, {name=usergroupsql, required=true, example=用户组sql，如果没有用户组筛选，就传空字符串}, {name=iscache, required=false, example=是否需要缓存, 1为是，0为不缓存，默认1}]",
+        "reportname": "retention_dau_dau_byweek",
+        "datasource": "presto",
+        "column": "[ds, init, retention1, retention2, retention3, retention4, retention5, retention6, retention7, retention8]",
+        "name": "[日期, 初始人数, 1周后, 2周后, 3周后, 4周后, 5周后, 6周后, 7周后, 8周后]",
+        "key": "",
+        "desc": "活跃活跃周留存"
+    },
 ]
