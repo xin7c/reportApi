@@ -26,3 +26,7 @@ nosetests report_cases.py -A "mode!='1'" -v
 
 ========================================
 有数据的appid：453c2f5cc4a2cf56763f8211be2cd2e5
+
+=======================================
+subchannel_bycampaign:
+{'startdate': '2017-09-01', 'enddate': '2017-09-05', 'subchannel': '__CID__'}
