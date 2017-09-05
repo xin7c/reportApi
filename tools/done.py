@@ -452,4 +452,22 @@ uri = [
         "key": "hours",
         "desc": "来源分析>>渠道效果对比>>点击趋势TOP5"
     },
+{
+        "args": "[{name=startdate, required=true, example=起始日期, 例:2016-12-01}, {name=enddate, required=true, example=结束日期, 例:2016-12-07}]",
+        "reportname": "home_dau_bygeo",
+        "datasource": "mysql",
+        "column": "[shortname, lon, lat, dau]",
+        "name": "[地区, 经度, 纬度, dau]",
+        "key": "shortname",
+        "desc": "门户地图报表"
+    },
+    {
+        "args": "[{name=appid, required=true, example=app unique key, 32字符, 例:37a4c0f4cc0810ccd34c61edb409c6e4}, {name=startdate, required=true, example=起始日期, 例:2016-12-01}, {name=enddate, required=true, example=结束日期, 例:2016-12-07}, {name=cid, required=false, example=渠道id, 例：23}, {name=iscache, required=false, example=是否需要缓存, 1为是，0为不缓存，默认1}]",
+        "reportname": "channelinfo_payer_top5_byhour",
+        "datasource": "mysql",
+        "column": "[hours, num_payer_all_user]",
+        "name": "[小时, 付费设备数]",
+        "key": "hours",
+        "desc": "来源分析>>渠道效果对比>>付费设备趋势TOP5"
+    },
 ]

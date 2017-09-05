@@ -26,7 +26,7 @@ class Test_Report(object):
         self.campaignid = "_default_"
         self.categoryid = "38"
         self.data = {
-            "startdate": "2017-08-01",
+            "startdate": "2017-09-01",
             "enddate": "2017-09-05"
         }
         self.data_install_pay = {
@@ -417,10 +417,24 @@ class Test_Report(object):
     #     data = self.data
     #     res = self.ra.action(reportname, data)
     #     self.checkReportName(reportname, res)
+    #
+    # def test_051_channelinfo_click_top5_byhour(self):
+    #     """051:来源分析>>渠道效果对比>>点击趋势TOP5???"""
+    #     reportname = "channelinfo_click_top5_byhour"
+    #     data = self.data
+    #     res = self.ra.action(reportname, data)
+    #     self.checkReportName(reportname, res)
+    #
+    # def test_052_home_dau_bygeo(self):
+    #     """052:门户地图报表"""
+    #     reportname = "home_dau_bygeo"
+    #     data = self.data
+    #     res = self.ra.action(reportname, data)
+    #     self.checkReportName(reportname, res)
 
-    def test_051_channelinfo_click_top5_byhour(self):
-        """051:来源分析>>渠道效果对比>>点击趋势TOP5???"""
-        reportname = "channelinfo_click_top5_byhour"
+    def test_053_channelinfo_payer_top5_byhour(self):
+        """053:来源分析>>渠道效果对比>>付费设备趋势TOP5"""
+        reportname = "channelinfo_payer_top5_byhour"
         data = self.data
         res = self.ra.action(reportname, data)
         self.checkReportName(reportname, res)
