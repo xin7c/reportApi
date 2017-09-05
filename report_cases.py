@@ -431,10 +431,18 @@ class Test_Report(object):
     #     data = self.data
     #     res = self.ra.action(reportname, data)
     #     self.checkReportName(reportname, res)
-
-    def test_053_channelinfo_payer_top5_byhour(self):
-        """053:来源分析>>渠道效果对比>>付费设备趋势TOP5"""
-        reportname = "channelinfo_payer_top5_byhour"
+    #
+    # def test_053_channelinfo_payer_top5_byhour(self):
+    #     """053:来源分析>>渠道效果对比>>付费设备趋势TOP5"""
+    #     reportname = "channelinfo_payer_top5_byhour"
+    #     data = self.data
+    #     res = self.ra.action(reportname, data)
+    #     self.checkReportName(reportname, res)
+    #
+    def test_054_subchannel_bycampaign(self):
+        """054:来源分析>>推广活动详情>>子渠道"""
+        reportname = "subchannel_bycampaign"
         data = self.data
+        data["cid"] = "23"
         res = self.ra.action(reportname, data)
         self.checkReportName(reportname, res)
