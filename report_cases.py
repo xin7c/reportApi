@@ -113,7 +113,7 @@ class Test_Report(object):
     #     self.checkReportName(reportname, res)
     #
     # def test_009_retention_dau_dau_byds(self):
-    #     """009:活跃活跃日留存"""
+    #     """009:活跃活跃日留存???"""
     #     reportname = "retention_dau_dau_byds"
     #     data = self.data
     #     data["usergroupsql"] = self.usergroupsql
@@ -342,7 +342,7 @@ class Test_Report(object):
     #     self.checkReportName(reportname, res)
     #
     # def test_040_campaigninfo_h5_bycampaign(self):
-    #     """040:来源分析>>推广活动详情>>推广活动>>H5监测数据"""
+    #     """040:来源分析>>推广活动详情>>推广活动>>H5监测数据???"""
     #     reportname = "campaigninfo_h5_bycampaign"
     #     data = self.data
     #     res = self.ra.action(reportname, data)
@@ -549,12 +549,48 @@ class Test_Report(object):
     #     data["cid"] = self.cid
     #     res = self.ra.action(reportname, data)
     #     self.checkReportName(reportname, res)
+    #
+    # def test_068_sdk_debug_log(self):
+    #     """068:新建APP>>数据测试>>app测试日志"""
+    #     reportname = "sdk_debug_log"
+    #     data = self.data
+    #     res = self.ra.action(reportname, data)
+    #     self.checkReportName(reportname, res)
+    #
+    # def test_069_subchannel_bychannel(self):
+    #     """069:来源分析>>推广活动详情>>子渠道???"""
+    #     reportname = "subchannel_bychannel"
+    #     data = self.data
+    #     data["campaignid"] = self.campaignid
+    #     res = self.ra.action(reportname, data)
+    #     self.checkReportName(reportname, res)
+    #
+    # def test_070_retention_dau_dau_byds(self):
+    #     """070:活跃活跃日留存"""
+    #     reportname = "retention_dau_dau_byds"
+    #     data = self.data
+    #     data["usergroupsql"] = self.usergroupsql
+    #     res = self.ra.action(reportname, data)
+    #     self.checkReportName(reportname, res)
+    #
+    # def test_071_campaigninfo_h5_bydatecampaign(self):
+    #     """071:来源分析>>推广活动详情>>推广活动>>H5监测数据???"""
+    #     reportname = "campaigninfo_h5_bydatecampaign"
+    #     data = self.data
+    #     res = self.ra.action(reportname, data)
+    #     self.checkReportName(reportname, res)
+    #
+    # def test_072_retention_install_dau_byds(self):
+    #     """072:新增活跃日留存[重复于58]"""
+    #     reportname = "retention_install_dau_byds"
+    #     data = self.data
+    #     data["usergroupsql"] = self.usergroupsql
+    #     res = self.ra.action(reportname, data)
+    #     self.checkReportName(reportname, res)
 
-    def test_068_sdk_debug_log(self):
-        """068:新建APP>>数据测试>>app测试日志"""
-        reportname = "sdk_debug_log"
+    def test_073_decision_potencial_bycategory(self):
+        """073:决策支持>>潜在用户群>>潜在用户群分析"""
+        reportname = "decision_potencial_bycategory"
         data = self.data
         res = self.ra.action(reportname, data)
         self.checkReportName(reportname, res)
-
-

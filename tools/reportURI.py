@@ -3,60 +3,6 @@
 uri = [
 
     {
-        "args": "[{name=appid, required=true, example=app unique key, 32字符, 例:37a4c0f4cc0810ccd34c61edb409c6e4}, {name=startdate, required=true, example=起始日期, 例:2016-12-01}, {name=enddate, required=true, example=结束日期, 例:2016-12-07}, {name=subchannel, required=true, example=渠道id, 例：23}, {name=iscache, required=false, example=是否需要缓存, 1为是，0为不缓存，默认1}]",
-        "reportname": "subchannel_bysubchannel",
-        "datasource": "mysql",
-        "column": "[subchannel, num_click_total, num_click, dupnum_click_all, num_ins, dupnum_reg, rate_install]",
-        "name": "[子渠道, 点击总数, 有效点击总数, 排重点击数, 排重激活设备数, 排重注册设备数, 激活率]",
-        "key": "subchannel",
-        "desc": "来源分析>>推广活动详情>>子渠道"
-    },
-    {
-        "args": "[{name=appid, required=true, example=app unique key, 32字符, 例:37a4c0f4cc0810ccd34c61edb409c6e4}, {name=id, required=false, example=数据的ID,例如:1}]",
-        "reportname": "sdk_debug_log",
-        "datasource": "mysql",
-        "column": "[id, appid, xwhat, xwhen, xwho, xwhere, xcontext, ds]",
-        "name": "[ID, APPKEY, 事件, 时间, 设备, xwhere, 上报数据, 日期]",
-        "key": "id",
-        "desc": "新建APP>>数据测试>>app测试日志"
-    },
-    {
-        "args": "[{name=appid, required=true, example=app unique key, 32字符, 例:37a4c0f4cc0810ccd34c61edb409c6e4}, {name=startdate, required=true, example=起始日期, 例:2016-12-01}, {name=enddate, required=true, example=结束日期, 例:2016-12-07}, {name=campaignid, required=true, example=推广活动unique key, 32位, 例：37a4c0f4cc0810ccd34c61edb409c6e4}, {name=iscache, required=false, example=是否需要缓存, 1为是，0为不缓存，默认1}]",
-        "reportname": "subchannel_bychannel",
-        "datasource": "mysql",
-        "column": "[cid, num_click_total, num_click, dupnum_click_all, num_ins, dupnum_reg, rate_install]",
-        "name": "[渠道, 点击总数, 有效点击总数, 排重点击数, 排重激活设备数, 排重注册设备数, 激活率]",
-        "key": "cid",
-        "desc": "来源分析>>推广活动详情>>子渠道"
-    },
-    {
-        "args": "[{name=appid, required=true, example=app unique key, 32字符, 例:37a4c0f4cc0810ccd34c61edb409c6e4}, {name=startdate, required=true, example=起始日期, 例:2016-12-01}, {name=enddate, required=true, example=结束日期, 例:2016-12-07}, {name=usergroupsql, required=true, example=用户组sql，如果没有用户组筛选，就传空字符串}, {name=iscache, required=false, example=是否需要缓存, 1为是，0为不缓存，默认1}]",
-        "reportname": "retention_dau_dau_byds",
-        "datasource": "presto",
-        "column": "[ds, init, retention1, retention2, retention3, retention4, retention5, retention6, retention7, retention14, retention30]",
-        "name": "[日期, 初始人数, 1日后, 2日后, 3日后, 4日后, 5日后, 6日后, 7日后, 14日后, 30日后]",
-        "key": "ds",
-        "desc": "活跃活跃日留存"
-    },
-    {
-        "args": "[{name=appid, required=true, example=app unique key, 32字符, 例:37a4c0f4cc0810ccd34c61edb409c6e4}, {name=startdate, required=true, example=起始日期, 例:2016-12-01}, {name=enddate, required=true, example=结束日期, 例:2016-12-07}, {name=campaignid, required=false, example=推广活动unique key, 32位, 例：37a4c0f4cc0810ccd34c61edb409c6e4}, {name=iscache, required=false, example=是否需要缓存, 1为是，0为不缓存，默认1}]",
-        "reportname": "campaigninfo_h5_bydatecampaign",
-        "datasource": "mysql",
-        "column": "[ds, campaignid, num_click, num_dis_ip, num_register, rate_reged_h5, num_loggin, num_pv, num_uv, num_finishload, num_finishload_uv, num_download, num_order, num_amout, num_payers]",
-        "name": "[日期, 推广活动, 点击总数, 排重点击IP数, 注册总数, 注册率, 登陆总数, PV, UV, 页面加载完成数, 页面加载完成UV, 下载总数, 订单总数, 付费总金额, 付费总人数]",
-        "key": "campaignid",
-        "desc": "来源分析>>推广活动详情>>推广活动>>H5监测数据"
-    },
-    {
-        "args": "[{name=appid, required=true, example=app unique key, 32字符, 例:37a4c0f4cc0810ccd34c61edb409c6e4}, {name=startdate, required=true, example=起始日期, 例:2016-12-01}, {name=enddate, required=true, example=结束日期, 例:2016-12-07}, {name=usergroupsql, required=true, example=用户组sql，如果没有用户组筛选，就传空字符串}, {name=iscache, required=false, example=是否需要缓存, 1为是，0为不缓存，默认1}]",
-        "reportname": "retention_install_dau_byds",
-        "datasource": "presto",
-        "column": "[ds, init, retention1, retention2, retention3, retention4, retention5, retention6, retention7, retention14, retention30]",
-        "name": "[日期, 初始人数, 1日后, 2日后, 3日后, 4日后, 5日后, 6日后, 7日后, 14日后, 30日后]",
-        "key": "ds",
-        "desc": "新增活跃日留存"
-    },
-    {
         "args": "[{name=appid, required=true, example=app unique key, 32字符, 例:37a4c0f4cc0810ccd34c61edb409c6e4}, {name=startdate, required=true, example=起始日期, 例:2016-12-01}, {name=enddate, required=true, example=结束日期, 例:2016-12-07}, {name=iscache, required=false, example=是否需要缓存, 1为是，0为不缓存，默认1}]",
         "reportname": "decision_potencial_bycategory",
         "datasource": "mysql",
