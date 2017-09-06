@@ -19,6 +19,8 @@ from datetime import *
 import json
 from tools.localException import ResponseIsNullException
 
+def test_action():
+    pass
 
 class Test_Report(object):
     def __init__(self):
