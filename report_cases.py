@@ -19,8 +19,8 @@ from datetime import *
 import json
 from tools.localException import ResponseIsNullException
 
-def test_action():
-    pass
+# def test_action():
+#     pass
 
 class Test_Report(object):
     def __init__(self):
@@ -446,7 +446,7 @@ class Test_Report(object):
     #     self.checkReportName(reportname, res)
     #
     # def test_054_subchannel_bycampaign(self):
-    #     """054:来源分析>>推广活动详情>>子渠道"""
+    #     """054:来源分析>>推广活动详情>>子渠道???"""
     #     reportname = "subchannel_bycampaign"
     #     data = self.data
     #     data["subchannel"] = self.subchannel
@@ -533,11 +533,28 @@ class Test_Report(object):
     #     data = self.data
     #     res = self.ra.action(reportname, data)
     #     self.checkReportName(reportname, res)
+    #
+    # def test_066_retention_dau_dau_byweek(self):
+    #     """066:活跃活跃周留存"""
+    #     reportname = "retention_dau_dau_byweek"
+    #     data = self.data
+    #     data["usergroupsql"] = self.usergroupsql
+    #     res = self.ra.action(reportname, data)
+    #     self.checkReportName(reportname, res)
+    #
+    # def test_067_subchannel_bysubchannel(self):
+    #     """067:来源分析>>推广活动详情>>子渠道???"""
+    #     reportname = "subchannel_bysubchannel"
+    #     data = self.data
+    #     data["cid"] = self.cid
+    #     res = self.ra.action(reportname, data)
+    #     self.checkReportName(reportname, res)
 
-    def test_066_retention_dau_dau_byweek(self):
-        """066:活跃活跃周留存"""
-        reportname = "retention_dau_dau_byweek"
+    def test_068_sdk_debug_log(self):
+        """068:新建APP>>数据测试>>app测试日志"""
+        reportname = "sdk_debug_log"
         data = self.data
-        data["usergroupsql"] = self.usergroupsql
         res = self.ra.action(reportname, data)
         self.checkReportName(reportname, res)
+
+
