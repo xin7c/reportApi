@@ -19,6 +19,7 @@ from datetime import *
 import json
 from tools.localException import ResponseIsNullException
 
+
 # def test_action():
 #     pass
 
@@ -58,7 +59,7 @@ class Test_Report(object):
             raise ResponseIsNullException(self.ra.appid)
 
     # def test_001_channelinfo_install_top5_byhour(self):
-    #     """001:来源分析>>渠道效果对比>>激活趋势TOP5"""
+    #     """001:来源分析>>渠道效果对比>>激活趋势TOP5???"""
     #     reportname = "channelinfo_install_top5_byhour"
     #     data = self.data
     #     res = self.ra.action(reportname, data)
@@ -439,7 +440,7 @@ class Test_Report(object):
     #     self.checkReportName(reportname, res)
     #
     # def test_053_channelinfo_payer_top5_byhour(self):
-    #     """053:来源分析>>渠道效果对比>>付费设备趋势TOP5"""
+    #     """053:来源分析>>渠道效果对比>>付费设备趋势TOP5???"""
     #     reportname = "channelinfo_payer_top5_byhour"
     #     data = self.data
     #     res = self.ra.action(reportname, data)
@@ -587,10 +588,60 @@ class Test_Report(object):
     #     data["usergroupsql"] = self.usergroupsql
     #     res = self.ra.action(reportname, data)
     #     self.checkReportName(reportname, res)
+    #
+    # def test_073_decision_potencial_bycategory(self):
+    #     """073:决策支持>>潜在用户群>>潜在用户群分析"""
+    #     reportname = "decision_potencial_bycategory"
+    #     data = self.data
+    #     res = self.ra.action(reportname, data)
+    #     self.checkReportName(reportname, res)
+    #
+    # def test_074_channelinstall_top10_bychannel(self):
+    #     """074:仪表盘>>渠道激活top10"""
+    #     reportname = "channelinstall_top10_bychannel"
+    #     data = self.data
+    #     res = self.ra.action(reportname, data)
+    #     self.checkReportName(reportname, res)
+    #
+    # def test_075_device_bynetwork(self):
+    #     """075:决策支持>>设备分析>>网络列表"""
+    #     reportname = "device_bynetwork"
+    #     data = self.data
+    #     res = self.ra.action(reportname, data)
+    #     self.checkReportName(reportname, res)
+    #
+    # def test_076_campaigninfo_byds(self):
+    #     """076:来源分析>>推广活动详情>>日期"""
+    #     reportname = "campaigninfo_byds"
+    #     data = self.data
+    #     res = self.ra.action(reportname, data)
+    #     self.checkReportName(reportname, res)
+    #
+    # def test_077_channelinfo_payer_top5_byds(self):
+    #     """077:来源分析>>渠道效果对比>>付费设备趋势TOP5???"""
+    #     reportname = "channelinfo_payer_top5_byds"
+    #     data = self.data
+    #     res = self.ra.action(reportname, data)
+    #     self.checkReportName(reportname, res)
+    #
+    # def test_078_rate_channelinfo_install_top5_byhour(self):
+    #     """077:来源分析>>渠道效果对比>>点击趋势TOP5???"""
+    #     reportname = "rate_channelinfo_install_top5_byhour"
+    #     data = self.data
+    #     res = self.ra.action(reportname, data)
+    #     self.checkReportName(reportname, res)
+    #
+    # def test_079_channelinfo_install_top5_byds(self):
+    #     """079:来源分析>>渠道效果对比>>激活趋势TOP5???"""
+    #     reportname = "channelinfo_install_top5_byds"
+    #     data = self.data
+    #     res = self.ra.action(reportname, data)
+    #     self.checkReportName(reportname, res)
 
-    def test_073_decision_potencial_bycategory(self):
-        """073:决策支持>>潜在用户群>>潜在用户群分析"""
-        reportname = "decision_potencial_bycategory"
+    def test_080_bd_bykwid_dates(self):
+        """080:来源分析>>推广活动详情>>百度关键词按日期"""
+        reportname = "bd_bykwid_date"
         data = self.data
+        data["campaignid"] = self.campaignid
         res = self.ra.action(reportname, data)
         self.checkReportName(reportname, res)

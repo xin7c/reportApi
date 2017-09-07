@@ -2,69 +2,8 @@
 # encoding: utf-8
 uri = [
 
-    {
-        "args": "[{name=appid, required=true, example=app unique key, 32字符, 例:37a4c0f4cc0810ccd34c61edb409c6e4}, {name=startdate, required=true, example=起始日期, 例:2016-12-01}, {name=enddate, required=true, example=结束日期, 例:2016-12-07}, {name=iscache, required=false, example=是否需要缓存, 1为是，0为不缓存，默认1}]",
-        "reportname": "decision_potencial_bycategory",
-        "datasource": "mysql",
-        "column": "[num_potencial]",
-        "name": "[用户数]",
-        "key": "category_id",
-        "desc": "决策支持>>潜在用户群>>潜在用户群分析"
-    },
-    {
-        "args": "[{name=appid, required=true, example=app unique key, 32字符, 例:37a4c0f4cc0810ccd34c61edb409c6e4}, {name=startdate, required=true, example=起始日期, 例:2016-12-01}, {name=enddate, required=true, example=结束日期, 例:2016-12-07}, {name=iscache, required=false, example=是否需要缓存, 1为是，0为不缓存，默认1}]",
-        "reportname": "channelinstall_top10_bychannel",
-        "datasource": "mysql",
-        "column": "[cid, num_install]",
-        "name": "[渠道, 激活量]",
-        "key": "cid",
-        "desc": "仪表盘>>渠道激活top10"
-    },
-    {
-        "args": "[{name=appid, required=true, example=app unique key, 32字符, 例:37a4c0f4cc0810ccd34c61edb409c6e4}, {name=startdate, required=true, example=起始日期, 例:2016-12-01}, {name=enddate, required=true, example=结束日期, 例:2016-12-07}, {name=iscache, required=false, example=是否需要缓存, 1为是，0为不缓存，默认1}]",
-        "reportname": "device_bynetwork",
-        "datasource": "mysql",
-        "column": "[network, num_ins, dau, num_startup]",
-        "name": "[网络类型, 激活设备, 活跃设备, 启动次数]",
-        "key": "network",
-        "desc": "决策支持>>设备分析>>网络列表"
-    },
-    {
-        "args": "[{name=appid, required=true, example=app unique key, 32字符, 例:37a4c0f4cc0810ccd34c61edb409c6e4}, {name=startdate, required=true, example=起始日期, 例:2016-12-01}, {name=enddate, required=true, example=结束日期, 例:2016-12-07}, {name=dupnum_click_day, required=false, example=按天排重点击, 例：true}, {name=rate_install, required=false, example=激活率, 例：true}, {name=dupnum_reged_day, required=false, example=注册设备数, 例：true}, {name=dupnum_reged_mon, required=false, example=排重注册设备数, 例：true}, {name=rate_reged, required=false, example=注册率, 例：true}, {name=rate_retentiond1, required=false, example=D1留存, 例：true}, {name=rate_retentiond3, required=false, example=D3留存, 例：true}, {name=rate_retentiond7, required=false, example=D7留存, 例：true}, {name=rate_retentiond30, required=false, example=D30留存, 例：true}, {name=amt_ltv0, required=false, example=LTV0, 例：true}, {name=amt_ltv7, required=false, example=LTV7, 例：true}, {name=amt_ltv30, required=false, example=LTV30, 例：true}, {name=amt_income_region, required=false, example=区间付费, 例：true}, {name=amt_income_new_user, required=false, example=新增付费, 例：true}, {name=num_payer_new_user, required=false, example=新增付费设备, 例：true}, {name=amt_income_all_user, required=false, example=总付费, 例：true}, {name=num_payer_all_user, required=false, example=总付费设备, 例：true}, {name=num_click_fake, required=false, example=异常点击总数, 例：true}, {name=rate_click_fake, required=false, example=异常点击率, 例：true}, {name=num_install_fake, required=false, example=异常激活设备总数, 例：true}, {name=rate_install_fake, required=false, example=异常激活率, 例：true}, {name=cid, required=false, example=渠道id, 例：23}, {name=campaignid, required=false, example=推广活动unique key, 32位, 例：37a4c0f4cc0810ccd34c61edb409c6e4}, {name=iscache, required=false, example=是否需要缓存, 1为是，0为不缓存，默认1}]",
-        "reportname": "campaigninfo_byds",
-        "datasource": "mysql",
-        "column": "[ds, num_click_total, num_click, dupnum_click_all, dupnum_click_day, num_install, rate_install, dupnum_reged_day, dupnum_reged_mon, rate_reged, rate_retentiond1, rate_retentiond3, rate_retentiond7, rate_retentiond30, amt_ltv0, amt_ltv7, amt_ltv30, amt_income_region, amt_income_new_user, num_payer_new_user, amt_income_all_user, num_payer_all_user, num_click_fake, rate_click_fake, num_install_fake, rate_install_fake]",
-        "name": "[日期, 点击总数, 有效点击总数, 排重点击数, 按天排重点击数, 排重激活设备数, 激活率, 按天排重注册设备数, 排重注册设备数, 注册率, D1留存, D3留存, D7留存, D30留存, LTV0, LTV7, LTV30, 区间付费, 新增付费, 新增付费设备数, 总付费, 总付费设备数, 异常点击总数, 异常点击率, 异常激活设备数, 异常激活率]",
-        "key": "ds",
-        "desc": "来源分析>>推广活动详情>>日期"
-    },
-    {
-        "args": "[{name=appid, required=true, example=app unique key, 32字符, 例:37a4c0f4cc0810ccd34c61edb409c6e4}, {name=startdate, required=true, example=起始日期, 例:2016-12-01}, {name=enddate, required=true, example=结束日期, 例:2016-12-07}, {name=cid, required=false, example=渠道id, 例：23}, {name=iscache, required=false, example=是否需要缓存, 1为是，0为不缓存，默认1}]",
-        "reportname": "channelinfo_payer_top5_byds",
-        "datasource": "mysql",
-        "column": "[ds, num_payer_all_user]",
-        "name": "[日期, 付费设备数]",
-        "key": "ds",
-        "desc": "来源分析>>渠道效果对比>>付费设备趋势TOP5"
-    },
-    {
-        "args": "[{name=appid, required=true, example=app unique key, 32字符, 例:37a4c0f4cc0810ccd34c61edb409c6e4}, {name=startdate, required=true, example=起始日期, 例:2016-12-01}, {name=enddate, required=true, example=结束日期, 例:2016-12-07}, {name=cid, required=false, example=渠道id, 例：23}, {name=iscache, required=false, example=是否需要缓存, 1为是，0为不缓存，默认1}]",
-        "reportname": "rate_channelinfo_install_top5_byhour",
-        "datasource": "mysql",
-        "column": "[hours, rate_install]",
-        "name": "[小时, 激活率]",
-        "key": "hours",
-        "desc": "来源分析>>渠道效果对比>>点击趋势TOP5"
-    },
-    {
-        "args": "[{name=appid, required=true, example=app unique key, 32字符, 例:37a4c0f4cc0810ccd34c61edb409c6e4}, {name=startdate, required=true, example=起始日期, 例:2016-12-01}, {name=enddate, required=true, example=结束日期, 例:2016-12-07}, {name=cid, required=false, example=渠道id, 例：23}, {name=iscache, required=false, example=是否需要缓存, 1为是，0为不缓存，默认1}]",
-        "reportname": "channelinfo_install_top5_byds",
-        "datasource": "mysql",
-        "column": "[ds, num_install]",
-        "name": "[日期, 激活量]",
-        "key": "ds",
-        "desc": "来源分析>>渠道效果对比>>激活趋势TOP5"
-    },
+
+
     {
         "args": "[{name=appid, required=true, example=app unique key, 32字符, 例:37a4c0f4cc0810ccd34c61edb409c6e4}, {name=startdate, required=true, example=起始日期, 例:2016-12-01}, {name=enddate, required=true, example=结束日期, 例:2016-12-07}, {name=campaignid, required=true, example=推广活动unique key, 32位, 例：37a4c0f4cc0810ccd34c61edb409c6e4}, {name=creative, required=false, example=创意id, 例：23}, {name=iscache, required=false, example=是否需要缓存, 1为是，0为不缓存，默认1}, {name=orderby, required=false, example=排序字段}]",
         "reportname": "bd_bykwid_date",
