@@ -66,7 +66,7 @@ class Test_Report(object):
     #     self.checkReportName(reportname, res)
     #
     # def test_002_realtime_payer(self):
-    #     """002:实时>>实时点击量"""
+    #     """002:实时>>实时点击量???"""
     #     reportname = "realtime_payer"
     #     data = self.data
     #     res = self.ra.action(reportname, data)
@@ -169,7 +169,7 @@ class Test_Report(object):
     #     self.checkReportName(reportname, res)
     #
     # def test_016_realtime_income(self):
-    #     """016:实时>>实时点击量"""
+    #     """016:实时>>实时点击量???"""
     #     reportname = "realtime_income"
     #     data = self.data
     #     res = self.ra.action(reportname, data)
@@ -327,7 +327,7 @@ class Test_Report(object):
     #     self.checkReportName(reportname, res)
     #
     # def test_038_retention_dau_dau_bymonth(self):
-    #     """038:活跃活跃月留存"""
+    #     """038:活跃活跃月留存???"""
     #     reportname = "retention_dau_dau_bymonth"
     #     data = self.data
     #     data["usergroupsql"] = self.usergroupsql
@@ -380,7 +380,7 @@ class Test_Report(object):
     #     self.checkReportName(reportname, res)
     #
     # def test_045_bd_bycreative(self):
-    #     """045:来源分析>>推广活动详情>>百度关键词???[重复于18]"""
+    #     """045:来源分析>>推广活动详情>>百度关键词???[重复于018]"""
     #     reportname = "bd_bycreative"
     #     data = self.data
     #     data["campaignid"] = "_default_"
@@ -582,7 +582,7 @@ class Test_Report(object):
     #     self.checkReportName(reportname, res)
     #
     # def test_072_retention_install_dau_byds(self):
-    #     """072:新增活跃日留存[重复于58]"""
+    #     """072:新增活跃日留存[重复于058]"""
     #     reportname = "retention_install_dau_byds"
     #     data = self.data
     #     data["usergroupsql"] = self.usergroupsql
@@ -637,11 +637,40 @@ class Test_Report(object):
     #     data = self.data
     #     res = self.ra.action(reportname, data)
     #     self.checkReportName(reportname, res)
+    #
+    # def test_080_bd_bykwid_dates(self):
+    #     """080:来源分析>>推广活动详情>>百度关键词按日期"""
+    #     reportname = "bd_bykwid_date"
+    #     data = self.data
+    #     data["campaignid"] = self.campaignid
+    #     res = self.ra.action(reportname, data)
+    #     self.checkReportName(reportname, res)
+    #
+    # def test_081_retention_dau_dau_bymonth(self):
+    #     """081:活跃活跃月留存???[重复于038]"""
+    #     reportname = "retention_dau_dau_bymonth"
+    #     data = self.data
+    #     data["usergroupsql"] = self.usergroupsql
+    #     res = self.ra.action(reportname, data)
+    #     self.checkReportName(reportname, res)
+    #
+    # def test_082_realtime_click(self):
+    #     """082:实时>>实时点击量???"""
+    #     reportname = "realtime_click"
+    #     data = self.data
+    #     res = self.ra.action(reportname, data)
+    #     self.checkReportName(reportname, res)
+    #
+    # def test_083_income_byds(self):
+    #     """083:仪表盘>>收入趋势（按天）"""
+    #     reportname = "income_byds"
+    #     data = self.data
+    #     res = self.ra.action(reportname, data)
+    #     self.checkReportName(reportname, res)
 
-    def test_080_bd_bykwid_dates(self):
-        """080:来源分析>>推广活动详情>>百度关键词按日期"""
-        reportname = "bd_bykwid_date"
-        data = self.data
-        data["campaignid"] = self.campaignid
+    def test_084_roi_byinterval(self):
+        """084:来源分析>>推广活动详情>>百度关键词???"""
+        reportname = "roi_byinterval"
+        data = self.data_install_pay
         res = self.ra.action(reportname, data)
         self.checkReportName(reportname, res)

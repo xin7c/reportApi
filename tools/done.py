@@ -705,4 +705,40 @@ uri = [
         "key": "ds",
         "desc": "来源分析>>渠道效果对比>>激活趋势TOP5"
     },
+    {
+        "args": "[{name=appid, required=true, example=app unique key, 32字符, 例:37a4c0f4cc0810ccd34c61edb409c6e4}, {name=startdate, required=true, example=起始日期, 例:2016-12-01}, {name=enddate, required=true, example=结束日期, 例:2016-12-07}, {name=campaignid, required=true, example=推广活动unique key, 32位, 例：37a4c0f4cc0810ccd34c61edb409c6e4}, {name=creative, required=false, example=创意id, 例：23}, {name=iscache, required=false, example=是否需要缓存, 1为是，0为不缓存，默认1}, {name=orderby, required=false, example=排序字段}]",
+        "reportname": "bd_bykwid_date",
+        "datasource": "mysql",
+        "column": "[ds, kwid, num_click_total, num_click, dupnum_click_all, num_ins, rate_install, dupnum_reg, amt_pay_new, num_pay_new]",
+        "name": "[日期, 关键字, 点击总数, 有效点击总数, 子活动排重点击数, 排重激活设备数, 激活率, 排重注册设备数, 新增付费金额, 新增付费设备数]",
+        "key": "kwid",
+        "desc": "来源分析>>推广活动详情>>百度关键词按日期"
+    },
+    {
+        "args": "[{name=appid, required=true, example=app unique key, 32字符, 例:37a4c0f4cc0810ccd34c61edb409c6e4}, {name=startdate, required=true, example=起始月1号, 例:2016-12-01}, {name=enddate, required=true, example=结束月1号, 例:2017-02-01}, {name=usergroupsql, required=true, example=用户组sql，如果没有用户组筛选，就传空字符串}, {name=iscache, required=false, example=是否需要缓存, 1为是，0为不缓存，默认1}]",
+        "reportname": "retention_dau_dau_bymonth",
+        "datasource": "presto",
+        "column": "[ds, init, retention1, retention2, retention3]",
+        "name": "[日期, 初始人数, 1月后, 2月后, 3月后]",
+        "key": "",
+        "desc": "活跃活跃月留存"
+    },
+    {
+        "args": "[{name=appid, required=true, example=app unique key, 32字符, 例:37a4c0f4cc0810ccd34c61edb409c6e4}, {name=startdate, required=true, example=起始日期, 例:2016-12-01}, {name=enddate, required=true, example=结束日期, 例:2016-12-07}, {name=iscache, required=false, example=是否需要缓存, 1为是，0为不缓存，默认1}, {name=cid, required=false, example=渠道在业务系统中的自增id, 例:2}, {name=campaignid, required=false, example=推广活动 唯一键, 32位字符, 例:37a4c0f4cc0810ccd34c61edb409c6e4}]",
+        "reportname": "realtime_click",
+        "datasource": "mysql",
+        "column": "[hours, click_tod, click_yes]",
+        "name": "[小时, 今日, 昨日]",
+        "key": "hours",
+        "desc": "实时>>实时点击量"
+    },
+    {
+        "args": "[{name=appid, required=true, example=app unique key, 32字符, 例:37a4c0f4cc0810ccd34c61edb409c6e4}, {name=startdate, required=true, example=起始日期, 例:2016-12-01}, {name=enddate, required=true, example=结束日期, 例:2016-12-07}, {name=iscache, required=false, example=是否需要缓存, 1为是，0为不缓存，默认1}, {name=campaignid, required=false, example=推广活动 唯一键, 32位字符, 例:37a4c0f4cc0810ccd34c61edb409c6e4}, {name=isnature, required=false, example=是否展现自然量数据, 1为是，0为不显示，默认1}]",
+        "reportname": "income_byds",
+        "datasource": "mysql",
+        "column": "[ds, amt_income_cam, amt_income_def]",
+        "name": "[日期, 推广量, 自然量]",
+        "key": "ds",
+        "desc": "仪表盘>>收入趋势（按天）"
+    },
 ]
