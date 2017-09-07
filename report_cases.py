@@ -39,7 +39,7 @@ class Test_Report(object):
         self.data_install_pay = {
             "install_startdate": "2017-08-01",
             "install_enddate": "2017-08-28",
-            "pay_startdate": "2017-01-01",
+            "pay_startdate": "2017-08-01",
             "pay_enddate": "2017-08-28"
         }
 
@@ -672,5 +672,6 @@ class Test_Report(object):
         """084:来源分析>>推广活动详情>>百度关键词???"""
         reportname = "roi_byinterval"
         data = self.data_install_pay
+        data["datatype"] = "list"
         res = self.ra.action(reportname, data)
         self.checkReportName(reportname, res)
