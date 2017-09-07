@@ -5,24 +5,7 @@ uri = [
 
 
 
-    {
-        "args": "[{name=appid, required=true, example=app unique key, 32字符, 例:37a4c0f4cc0810ccd34c61edb409c6e4}, {name=install_startdate, required=true, example=激活起始日期, 例:2016-12-01}, {name=install_enddate, required=true, example=激活结束日期, 例:2016-12-07}, {name=pay_startdate, required=true, example=激活起始日期, 例:2016-12-01}, {name=pay_enddate, required=true, example=激活结束日期, 例:2016-12-07}, {name=campaignid, required=false, example=推广活动unique key, 32位, 例：37a4c0f4cc0810ccd34c61edb409c6e4}, {name=cid, required=false, example=渠道自增id}, {name=iscache, required=false, example=是否需要缓存, 1为是，0为不缓存，默认1}]",
-        "reportname": "roi_byinterval",
-        "datasource": "mysql",
-        "column": "[ins_ds, pay_ds, amt_amount]",
-        "name": "[日期, 付费日期, 付费金额]",
-        "key": "ins_ds",
-        "desc": "来源分析>>推广活动详情>>百度关键词"
-    },
-    {
-        "args": "[{name=appid, required=true, example=app unique key, 32字符, 例:37a4c0f4cc0810ccd34c61edb409c6e4}, {name=startdate, required=true, example=起始日期, 例:2016-12-01}, {name=enddate, required=true, example=结束日期, 例:2016-12-07}, {name=iscache, required=false, example=是否需要缓存, 1为是，0为不缓存，默认1}]",
-        "reportname": "decision_payment_byds",
-        "datasource": "mysql",
-        "column": "[num_pay, num_potential, num_not_pay]",
-        "name": "[已付费, 潜在付费, 未付费]",
-        "key": "ds",
-        "desc": "决策支持>>付费洞察>>新用户付费趋势"
-    },
+
     {
         "args": "[{name=appid, required=true, example=app unique key, 32字符, 例:37a4c0f4cc0810ccd34c61edb409c6e4}, {name=startdate, required=true, example=起始日期, 例:2016-12-01}, {name=enddate, required=true, example=结束日期, 例:2016-12-07}, {name=campaignid, required=true, example=推广活动unique key, 32位, 例：37a4c0f4cc0810ccd34c61edb409c6e4}, {name=creative, required=false, example=创意id, 例：23}, {name=iscache, required=false, example=是否需要缓存, 1为是，0为不缓存，默认1}, {name=orderby, required=false, example=排序字段}]",
         "reportname": "bd_bykwid",
