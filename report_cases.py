@@ -25,6 +25,7 @@ from tools.localException import ResponseIsNullException
 
 class Test_Report(object):
     def __init__(self):
+
         self.appid = "0c88f597eba1f531d7318eb7c092c69f"
         # self.appid = "e31caee07ebedf8c172267e73204802f"
         self.campaignid = "_default_"
@@ -32,6 +33,8 @@ class Test_Report(object):
         self.cid = "23"
         self.usergroupsql = ""
         self.subchannel = "__CID__"
+        self.datatype_list = "list"
+        self.datatype_char = "char"
         self.data = {
             "startdate": "2017-09-01",
             "enddate": "2017-09-05"
@@ -42,10 +45,10 @@ class Test_Report(object):
             "pay_startdate": "2017-08-01",
             "pay_enddate": "2017-08-28"
         }
-
+        self.ra = Report_Api(self.appid)
     def setUp(self):
         print "[Start] @ %s" % datetime.today()
-        self.ra = Report_Api(self.appid)
+
 
     def tearDown(self):
         print "[End] @ %s" % datetime.today()
@@ -522,7 +525,7 @@ class Test_Report(object):
         self.checkReportName(reportname, res)
 
     def test_064_channelinfo_amount_top5_byds(self):
-        """064:来源分析>>渠道效果对比>>收入趋势TOP5"""
+        """064:来源分析>>渠道效果对比>>收入趋势TOP5???"""
         reportname = "channelinfo_amount_top5_byds"
         data = self.data
         res = self.ra.action(reportname, data)
@@ -680,5 +683,50 @@ class Test_Report(object):
         """085:决策支持>>付费洞察>>新用户付费趋势"""
         reportname = "decision_payment_byds"
         data = self.data
+        res = self.ra.action(reportname, data)
+        self.checkReportName(reportname, res)
+
+    def test_086_bd_bykwid(self):
+        """086:来源分析>>推广活动详情>>百度关键词???[重复于34]"""
+        reportname = "bd_bykwid"
+        data = self.data
+        data["campaignid"] = "_default_"
+        res = self.ra.action(reportname, data)
+        self.checkReportName(reportname, res)
+
+    def test_087_sdk_debug_events_count(self):
+        """087:新建APP>>数据测试>>APP上报事件数"""
+        reportname = "sdk_debug_events_count"
+        data = {
+            "datatype": "list"
+        }
+        res = self.ra.action(reportname, data)
+        self.checkReportName(reportname, res)
+
+    def test_088_rate_channelinfo_retention_top5_bychannel(self):
+        """088:来源分析>>渠道效果对比>>留存top5"""
+        reportname = "rate_channelinfo_retention_top5_bychannel"
+        data = self.data
+        res = self.ra.action(reportname, data)
+        self.checkReportName(reportname, res)
+
+    def test_089_channelinfo_amount_top5_byhour(self):
+        """089:来源分析>>渠道效果对比>>收入趋势TOP5"""
+        reportname = "channelinfo_amount_top5_byhour"
+        data = self.data
+        res = self.ra.action(reportname, data)
+        self.checkReportName(reportname, res)
+
+    def test_090_click_byds(self):
+        """090:仪表盘>>点击量趋势（按天）"""
+        reportname = "click_byds"
+        data = self.data
+        res = self.ra.action(reportname, data)
+        self.checkReportName(reportname, res)
+
+    def test_091_roi_bycampaign(self):
+        """091:来源分析>>推广活动详情>>百度关键词???"""
+        reportname = "roi_bycampaign"
+        data = self.data_install_pay
         res = self.ra.action(reportname, data)
         self.checkReportName(reportname, res)
