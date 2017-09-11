@@ -46,9 +46,9 @@ class Test_Report(object):
             "pay_enddate": "2017-08-28"
         }
         self.ra = Report_Api(self.appid)
+
     def setUp(self):
         print "[Start] @ %s" % datetime.today()
-
 
     def tearDown(self):
         print "[End] @ %s" % datetime.today()
