@@ -45,8 +45,8 @@ class Report_Api(object):
         url = self.url_Maker(reportname=reportname)
         r = requests.post(headers=self.headers, url=url, data=data, timeout=5)
         result = r.text
-        print r.url
-        print data
+        # print r.url
+        # print data
         print result
         return result
 
