@@ -30,13 +30,17 @@ class Report_Api(object):
         self.headers = {
             "Content-Type": "application/x-www-form-urlencoded"
         }
-        self.host = "http://ec2-54-223-136-157.cn-north-1.compute.amazonaws.com.cn:8089/api/trackingio"
+        # self.host = "http://ec2-54-223-136-157.cn-north-1.compute.amazonaws.com.cn:8089/api/trackingio"
+        self.host = "http://ec2-54-222-233-230.cn-north-1.compute.amazonaws.com.cn:9010/api/trackingio"
         self.appid = appid
         # self.appid = "0c88f597eba1f531d7318eb7c092c69f"
 
     def url_Maker(self, reportname):
         """input : urlencode_data"""
+        # mac
         _url = os.path.join(self.host, reportname, self.appid)
+        # windows
+        _url = self.host + "/" + reportname + "/" + self.appid
         return _url
 
     def action(self, reportname=None, data=None):

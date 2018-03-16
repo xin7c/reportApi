@@ -25,7 +25,7 @@ from tools.localException import ResponseIsNullException
 class Test_Report(object):
     def __init__(self):
 
-        self.appid = "0c88f597eba1f531d7318eb7c092c69f"
+        self.appid = "453c2f5cc4a2cf56763f8211be2cd2e5"
         # self.appid = "e31caee07ebedf8c172267e73204802f"
         self.campaignid = "_default_"
         self.categoryid = "38"
@@ -35,14 +35,14 @@ class Test_Report(object):
         self.datatype_list = "list"
         self.datatype_char = "char"
         self.data = {
-            "startdate": "2017-09-01",
-            "enddate": "2017-09-05"
+            "startdate": "2018-01-01",
+            "enddate": "2018-03-05"
         }
         self.data_install_pay = {
-            "install_startdate": "2017-08-01",
-            "install_enddate": "2017-08-28",
-            "pay_startdate": "2017-08-01",
-            "pay_enddate": "2017-08-28"
+            "install_startdate": "2018-01-01",
+            "install_enddate": "2018-03-05",
+            "pay_startdate": "2018-01-01",
+            "pay_enddate": "2018-03-05"
         }
         self.ra = Report_Api(self.appid)
 
