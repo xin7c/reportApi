@@ -5,7 +5,6 @@
 @author: xuchu
 @software: PyCharm
 @file: report_cases.py
-@time: 2017/8/28 下午2:01
 """
 import sys
 

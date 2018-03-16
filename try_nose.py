@@ -5,7 +5,6 @@
 @author: xuchu
 @software: PyCharm
 @file: try_nose.py
-@time: 2017/8/28 下午4:44
 """
 
 from report_main import Report_Api

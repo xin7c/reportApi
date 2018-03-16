@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 # encoding=utf-8
-# @Time    : 2017/8/28 10:10
 # @Author  : xuchu
 # @File    : report_main.py
 # @Software: PyCharm
